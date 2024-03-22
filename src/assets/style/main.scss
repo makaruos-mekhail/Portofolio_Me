@@ -1,0 +1,16 @@
+@import "maxins.scss";
+@import "variables.scss";
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: white !important;
+  min-height: 100%;
+  overflow: auto;
+
+}
