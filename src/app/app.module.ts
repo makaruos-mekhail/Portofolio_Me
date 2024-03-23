@@ -11,12 +11,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

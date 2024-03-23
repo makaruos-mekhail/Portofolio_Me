@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
+import { ThemeDarkService } from './shared/Theme_dark/theme-dark.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
   title = 'Portofolio Me';
   lang: any = 'en';
 
-  constructor(private router: Router, private translate: TranslateService) {
+  constructor(private router: Router, private translate: TranslateService,private themeService: ThemeDarkService) {
     if (sessionStorage.getItem('lang')) {
       this.lang = sessionStorage.getItem('lang') as string;
     } else {
@@ -31,5 +32,12 @@ export class AppComponent {
           this.router.navigate(['/home']);
         }
       });
+  }
+
+  ngOnInit() {
+    const storedIsDarkMode = localStorage.getItem('isDarkMode');
+    if (storedIsDarkMode !== null) {
+      this.themeService.isDarkMode = storedIsDarkMode === 'true';
+    }
   }
 }

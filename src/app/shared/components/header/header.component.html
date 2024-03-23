@@ -1,4 +1,117 @@
-<div  class="bg-primary mb-0">header works!
-
+<div class=" d-none d-sm-block" [ngClass]="getCurrentThemeClass('header_component')">
+  <ul class="d-flex justify-content-between mb-0 bod">
+    <li class="d-flex justify-content-start col-3">
+        <img src="assets/icon/Icon.png" class="img-icon" routerLink="/Home">
+          <span class="firstLetter"  routerLink="/Home">Makaruos</span>
+    </li>
+    <li class="m-auto col_center col-4">
+      <ul class="d-flex justify-content-between">
+        <li class="page Ul" routerLink="/home" routerLinkActive="active-page">Home</li>
+        <li class="page" routerLink="#" routerLinkActive="active-page">Skils</li>
+        <li class="page" routerLink="#" routerLinkActive="active-page">Projects</li>
+        <li class="page" routerLink="#" routerLinkActive="active-page">About Us</li>
+        <li class="page" routerLink="#" routerLinkActive="active-page">Contact Us</li>
+      </ul>
+    </li>
+    <li class="d-flex justify-content-end col-3">
+      <div class="d-flex gap-2">
+        <button class="btn button1" type="button">
+          <img (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
+            style="width: 35px;">
+          <img (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
+            style="width: 35px;">
+        </button>
+        <div class="dark_mode m-auto mb-0">
+          <label class="ui-switch">
+            <input type="checkbox" (change)="toggleDarkMode()">
+            <div class="slider">
+              <div class="circle"></div>
+            </div>
+          </label>          
+        </div>
+        <!-- <div class="button2">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <div class="button3">
+          <i class="fa-brands fa-x-twitter"></i>
+        </div>
+        <div class="button4">
+          <i class="fa-brands fa-facebook"></i>
+        </div> -->
+      </div>
+    </li>
+  </ul>
 </div>
+<div class="header_component_phone d-block d-sm-none" [ngClass]="getCurrentThemeClass('header_component_phone')">
+  <ul class="d-flex justify-content-between mb-0 bod">
+    <li class="d-flex justify-content-start col-3">
+      <img src="assets/image/header/icon.svg" routerLink="Home" alt="">
+    </li>
+    <li class="d-flex justify-content-end col-3">
+      <div class="d-flex gap-2">
+        <button class="btn button1" type="button">
+          <img (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
+            style="width: 35px;">
+          <img (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
+            style="width: 35px;">
+        </button>
+        <button class="btn btn_offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample">
+          <i class="fa-solid fa-bars "></i>
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <div class="offcanvas offcanvas-start w-75  p-3" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+        <div class="d-flex gap-2">
+          <div class="button2">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <div class="button3">
+            <i class="fa-brands fa-x-twitter"></i>
+          </div>
+          <div class="button4">
+            <i class="fa-brands fa-facebook"></i>
+          </div>
+        </div>
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="gap-4 mt-5">
+        <li class="page" routerLink="/Home" routerLinkActive="active-page">Home</li>
+        <li class="page mt-3" routerLink="#" routerLinkActive="active-page">Schools</li>
+        <li class="page mt-3" routerLink="#" routerLinkActive="active-page">Events & Gallery</li>
+        <li class="page mt-3" routerLink="#" routerLinkActive="active-page">About Us</li>
+        <li class="page mt-3" routerLink="#" routerLinkActive="active-page">Contact Us</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="pad"></div>
 <app-screen-loadar></app-screen-loadar>
+
+<div class="redes_style">
+  <div class="redes">
+    <a class="instagram" href="#">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a class="facebook" href="#">
+      <i class="fa-brands fa-square-facebook"></i>
+    </a>
+    <a class="twitter" href="#">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a class="discord" href="#">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+  </div>
+</div>
+
+<div class="main" (click)="scrollToTop()" [ngClass]="{'show-scrollTop': windowScrolled}">
+  <p class="scroll"><i class=" fa-solid fa-arrow-up"></i></p>
+</div>
