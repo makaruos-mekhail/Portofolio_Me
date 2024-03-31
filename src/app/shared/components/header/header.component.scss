@@ -1,11 +1,12 @@
 @import "../../../../assets/style/main.scss";
 
 .header_component,
-.header_component_dark {
+.header_component_light {
   background-color: black;
   width: 100%;
   border-bottom: 1px gray solid;
   position: fixed;
+  z-index: 1000;
   @include rtl(padding-left, 0px);
 
   .img-icon {
@@ -15,7 +16,7 @@
   }
 
   .firstLetter {
-    color: gray;
+    color: white;
     font-style: italic;
     line-height: 35px;
     font-family: var(--Plus_Jakarta);
@@ -24,7 +25,7 @@
   }
 
   .firstLetter::first-letter {
-    color: red !important;
+    color:  goldenrod !important;
   }
 
 
@@ -51,6 +52,11 @@
     text-align: left;
     color: white;
 
+  }
+  .page::first-letter {
+    color: goldenrod !important;
+    font-size: 20px;
+    font-family: var(--Plus_Jakarta);
   }
 
   .active-page {
@@ -123,28 +129,29 @@
   }
 }
 
-.header_component_dark {
-  background-color: white;
+.header_component_light {
+  background-color: #2c374b;
 
   .page {
-    color: black;
+    color: white;
   }
 
   .active-page {
-    color: black !important;
+    color: white !important;
   }
 
   .img-icon {
-    background-color: black;
+    background-color: white;
   }
 
 }
 
 .header_component_phone,
-.header_component_phone_dark {
+.header_component_phone_light {
   background-color: black;
   width: 100%;
   position: fixed;
+  z-index: 1000;
   @include rtl(padding-left, 0px);
 
   .img-icon {
@@ -154,7 +161,7 @@
   }
 
   .firstLetter {
-    color: gray;
+    color: white;
     font-style: italic;
     line-height: 35px;
     font-family: var(--Plus_Jakarta);
@@ -163,7 +170,7 @@
   }
 
   .firstLetter::first-letter {
-    color: red !important;
+    color: goldenrod !important;
   }
 
   .bod {
@@ -190,7 +197,7 @@
     position: relative;
     display: flex;
     justify-content: flex-start;
-    color: white;
+    color: black;
   }
 
   .page:hover {
@@ -258,12 +265,12 @@
   }
 
   .offcanvas {
-    background-color: #000000;
+    background-color: white;
   }
 }
 
-.header_component_phone_dark {
-  background-color: white;
+.header_component_phone_light {
+  background-color: #2c374b;;
 
   .page {
     color: black;

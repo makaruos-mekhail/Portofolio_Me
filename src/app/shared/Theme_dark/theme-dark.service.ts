@@ -18,6 +18,6 @@ export class ThemeDarkService {
   }
 
   getCurrentThemeClass(baseClass: string): string {
-    return this.isDarkMode ? `${baseClass}_dark` : baseClass;
+    return this.isDarkMode ? `${baseClass}_light` : baseClass;
   }
 }

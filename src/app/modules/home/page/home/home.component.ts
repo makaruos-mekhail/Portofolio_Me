@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeDarkService } from 'src/app/shared/Theme_dark/theme-dark.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,21 @@ import { ThemeDarkService } from 'src/app/shared/Theme_dark/theme-dark.service';
 })
 export class HomeComponent implements OnInit {
 
-  sentence: string = "Welcome to my porotfolio !. I'am a passionate frontend developer dedicated . to creating exceptional user experience. With a strong background in Angular , HTML5 ,. CSS3 , JavaScript and Dot Net Developer";
+  sentence: string = '';
   delay: number = 70;
   output: string = '';
 
 
   ngOnInit(): void {
-    this.printSentence();
+    this.translate.get('home.Welcome').subscribe((translation: string) => {
+      this.sentence = translation;
+      this.printSentence();
+    });
   }
+
+  // ngOnInit(): void {
+  //   this.printSentence();
+  // }
 
   printSentence() {
     const words = this.sentence.split(' ');
@@ -26,7 +34,7 @@ export class HomeComponent implements OnInit {
         this.output += '&nbsp;';
       }
       else if (words[i][j] === '.') {
-        this.output += '<br>'; 
+        this.output += '<br>';
       } else {
         this.output += `<span>${words[i][j]}</span>`;
       }
@@ -43,15 +51,15 @@ export class HomeComponent implements OnInit {
   }
 
 
-  constructor(private themeService: ThemeDarkService) {
+  constructor(private themeService: ThemeDarkService,private translate: TranslateService) {
   }
-  
+
   // dark mode
   toggleDarkMode() {
     this.themeService.toggleDarkMode();
   }
 
-  getCurrentThemeClass(value:string) {
+  getCurrentThemeClass(value: string) {
     return this.themeService.getCurrentThemeClass(value);
   }
 }

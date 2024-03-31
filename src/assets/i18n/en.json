@@ -1,0 +1,16 @@
+{
+  "header": {
+    "home": "Home",
+    "skils": "Skils",
+    "projects": "Projects",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "home":{
+    "Hello":"Hello, I'm",
+    "name_me":"Makaruos Mekhail Yousab",
+    "job":"Full Stack Dot Net & Angular Developer",
+    "download":"Download CV",
+    "Welcome":"Welcome to my porotfolio !. I'am a passionate frontend developer dedicated . to creating exceptional user experience. With a strong background in Angular , HTML5 ,. CSS3 , JavaScript and Dot Net Developer"
+  }
+}

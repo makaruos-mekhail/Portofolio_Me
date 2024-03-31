@@ -21,6 +21,11 @@
     @content;
   }
 }
+@mixin mobile-Small {
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
 
 @mixin rtl($prop, $value) {
   html[dir=rtl] & {

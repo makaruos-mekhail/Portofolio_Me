@@ -1,5 +1,6 @@
-@import "maxins.scss";
-@import "variables.scss";
+@import "maxins";
+@import "variables";
+@import "font";
 
 
 * {
@@ -19,7 +20,7 @@
 // }
 // ::-webkit-scrollbar-track {
 //   background:#fff;
-  
+
 // }
 // ::-webkit-scrollbar-thumb {
 //  background:black;
@@ -45,3 +46,25 @@ body {
   overflow: auto;
 
 }
+
+
+// .header_component,
+// .header_component_light,.header_component_phone,
+// .header_component_phone_light {
+//   .img-icon {
+//     // arabic
+//     @include rtl(order, 2);
+
+//     // english
+//     @include ltr(order, 1);
+
+//   }
+
+//   .order_ {
+//     // arabic
+//     @include rtl(order, 1);
+
+//     // english
+//     @include ltr(order, 2);
+//   }
+// }
