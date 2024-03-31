@@ -62,4 +62,17 @@ export class HomeComponent implements OnInit {
   getCurrentThemeClass(value: string) {
     return this.themeService.getCurrentThemeClass(value);
   }
+
+
+
+    // downloadPDF
+    downloadPDF(filePath: string): void {
+      const a = window.document.createElement('a');
+      const fileName = filePath.split('/').pop();
+      a.setAttribute('href', filePath);
+      a.setAttribute('download', fileName || 'downloadedFile.pdf');
+      window.document.body.appendChild(a);
+      a.click();
+      window.document.body.removeChild(a);
+    }
 }
