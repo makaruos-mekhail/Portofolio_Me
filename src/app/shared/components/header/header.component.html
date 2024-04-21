@@ -23,7 +23,7 @@
         </button>
         <div class="dark_mode m-auto mb-0">
           <label class="ui-switch">
-            <input type="checkbox" (change)="toggleDarkMode()">
+            <input type="checkbox" (change)="toggleDarkMode()" [checked]="isDark">
             <div class="slider" >
               <div class="circle"></div>
             </div>

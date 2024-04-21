@@ -241,40 +241,40 @@
     }
   }
 
-  .img_position {
-    position: absolute;
-    top: 19%;
-    right: 20%;
-    width: 23rem;
-    @include tablet-and-up {
-      width: 19rem;
-    }
-    @include mobile-only{
-      width: 13rem;
-      top: 25%;
-      right: 24%;
-    }
-    @include mobile-Small{
-      top: 16%;
-      right: 18%;  
-    }
-  }
+  // .img_position {
+  //   position: absolute;
+  //   top: 19%;
+  //   right: 20%;
+  //   width: 23rem;
+  //   @include tablet-and-up {
+  //     width: 19rem;
+  //   }
+  //   @include mobile-only{
+  //     width: 13rem;
+  //     top: 25%;
+  //     right: 24%;
+  //   }
+  //   @include mobile-Small{
+  //     top: 16%;
+  //     right: 18%;  
+  //   }
+  // }
 
-  .img_position2 {
-    position: absolute;
-    top: 2%;
-    right: 10%;
-    transform: rotate(33deg) skew(6deg, -7deg);
-    @include tablet-and-up {
-      top: -7%;
-      right: 4%;  
-    }
-    @include mobile-only{
-      top: -15%;
-      right: -2%;
-      transform: rotate(26deg) skew(6deg, -7deg);
-    }
-  }
+  // .img_position2 {
+  //   position: absolute;
+  //   top: 2%;
+  //   right: 10%;
+  //   transform: rotate(33deg) skew(6deg, -7deg);
+  //   @include tablet-and-up {
+  //     top: -7%;
+  //     right: 4%;  
+  //   }
+  //   @include mobile-only{
+  //     top: -15%;
+  //     right: -2%;
+  //     transform: rotate(26deg) skew(6deg, -7deg);
+  //   }
+  // }
 
 
 }

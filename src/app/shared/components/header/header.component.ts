@@ -10,7 +10,15 @@ import { ThemeDarkService } from '../../Theme_dark/theme-dark.service';
 export class HeaderComponent  implements OnInit{
   windowScrolled: boolean = false;
 
+  isDark? :boolean;
+
   ngOnInit(): void {
+    if(localStorage.getItem('DarkMode') == 'true'){
+       this.isDark = true;
+    }else{
+      this.isDark = false;
+
+    }    
   }
 
   [x: string]: any;
