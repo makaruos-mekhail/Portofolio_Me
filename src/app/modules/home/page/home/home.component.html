@@ -1,4 +1,4 @@
-<div class="mb-0" [ngClass]="getCurrentThemeClass('home')">
+<div class="mb-0" [ngClass]="getCurrentThemeClass('home')"  #home>
   <section class="row col-12 m-0">
     <div class="col-12 col-sm-7 p-4 p-sm-5 m-auto">
       <div>
@@ -28,9 +28,19 @@
     </div>
     <div class="div-center col-12 col-sm-5 m-auto" style="position: relative;">
       <img src="assets/image/home/MY-img.png" class="w-100 p-3 p-sm-5 img" alt="">
-      <!-- <img src="assets/image/home/My2.png" alt="" class="img_position">
-      <img src="assets/image/home/Group3.png" alt="" class="img_position2"> -->
+
     </div>
   </section>
 </div>
-<!-- <app-skils></app-skils> -->
+<div #skils>
+  <app-skils></app-skils>
+</div>
+<div #projects  style="height: 1000px;">
+  projects
+</div>
+<div #about  style="height: 1000px;">
+  <app-aboutus/>
+</div>
+<div #contact  style="height: 1000px;">
+  <app-contactus/>
+</div>

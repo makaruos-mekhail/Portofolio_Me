@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemeDarkService } from '../../Theme_dark/theme-dark.service';
+import { ScrollService } from '../../ScrollService-ToSection/scroll.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,8 @@ import { ThemeDarkService } from '../../Theme_dark/theme-dark.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent  implements OnInit{
+  @ViewChild('menuContact') menu: ElementRef | undefined;
+
   windowScrolled: boolean = false;
 
   isDark? :boolean;
@@ -24,7 +27,7 @@ export class HeaderComponent  implements OnInit{
   [x: string]: any;
   lang: string = sessionStorage.getItem('lang') || 'en';
 
-  constructor(private translate: TranslateService,private renderer: Renderer2,private themeService: ThemeDarkService) {
+  constructor(private translate: TranslateService,private renderer: Renderer2,private themeService: ThemeDarkService,private scrollService: ScrollService) {
     this.switchPagesDirection(this.lang);
 
   }
@@ -69,5 +72,19 @@ export class HeaderComponent  implements OnInit{
       top: 0,
       behavior: 'smooth'
     }) 
+  }
+
+  toggleMenu() {
+    if (this.menu) {
+      const modal = this.menu.nativeElement;
+      const closeButton = modal.querySelector('.btn-close');
+      if (closeButton) {
+        (closeButton as HTMLElement).click();
+      }
+    }
+  }
+
+  scrollToSection(section: string): void {
+    this.scrollService.scrollTo(section);
   }
 }

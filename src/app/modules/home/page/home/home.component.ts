@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ThemeDarkService } from 'src/app/shared/Theme_dark/theme-dark.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { ScrollService } from 'src/app/shared/ScrollService-ToSection/scroll.service';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +16,56 @@ export class HomeComponent implements OnInit {
   output: string = '';
 
 
+  @ViewChild('home') homeSection!: ElementRef;
+  @ViewChild('skils') skilsSection!: ElementRef;
+  @ViewChild('projects') projectsSection!: ElementRef;
+  @ViewChild('about') aboutSection!: ElementRef;
+  @ViewChild('contact') contactSection!: ElementRef;
+  private scrollSubscription!: Subscription;
+
+  scrollToSection(section: string): void {
+    let element: HTMLElement;
+    switch(section) {
+      case 'home':
+        element = this.homeSection.nativeElement;
+        break;
+      case 'skils':
+        element = this.skilsSection.nativeElement;
+        break;
+      case 'projects':
+        element = this.projectsSection.nativeElement;
+        break;
+      case 'about':
+        element = this.aboutSection.nativeElement;
+        break;
+      case 'contact':
+        element = this.contactSection.nativeElement;
+        break;
+      default:
+        return;
+    }
+
+    const offset = 70; // 10 pixels offset
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
   ngOnInit(): void {
     this.translate.get('home.Welcome').subscribe((translation: string) => {
       this.sentence = translation;
       this.printSentence();
+    });
+
+    
+    this.scrollSubscription = this.scrollService.scrollToSection$.subscribe(section => {
+      this.scrollToSection(section);
     });
   }
 
@@ -51,7 +99,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  constructor(private themeService: ThemeDarkService,private translate: TranslateService) {
+  constructor(private themeService: ThemeDarkService,private translate: TranslateService,private scrollService: ScrollService) {
   }
 
   // dark mode

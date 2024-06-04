@@ -6,11 +6,12 @@
     </li>
     <li class="m-auto col_center col-4">
       <ul class="d-flex justify-content-between">
-        <li class="page Ul" routerLink="/home" routerLinkActive="active-page">{{'header.home'|translate}}</li>
-        <li class="page" routerLink="#" routerLinkActive="active-page">{{'header.skils'|translate}}</li>
-        <li class="page" routerLink="#" routerLinkActive="active-page">{{'header.projects'|translate}}</li>
-        <li class="page" routerLink="#" routerLinkActive="active-page">{{'header.about'|translate}}</li>
-        <li class="page" routerLink="#" routerLinkActive="active-page">{{'header.contact'|translate}}</li>
+        <!-- routerLink="/home" routerLinkActive="active-page" -->
+        <li class="page Ul"  (click)="scrollToSection('home')" id="home">{{'header.home'|translate}}</li>
+        <li class="page" (click)="scrollToSection('skils')" id="skils">{{'header.skils'|translate}}</li>
+        <li class="page" (click)="scrollToSection('projects')" id="projects">{{'header.projects'|translate}}</li>
+        <li class="page" (click)="scrollToSection('about')" id="about">{{'header.about'|translate}}</li>
+        <li class="page" (click)="scrollToSection('contact')" id="contact">{{'header.contact'|translate}}</li>
       </ul>
     </li>
     <li class="d-flex justify-content-end col-3">
@@ -65,13 +66,13 @@
   </ul>
 
   <div class="offcanvas offcanvas-start w-75  p-3" tabindex="-1" id="offcanvasExample"
-    aria-labelledby="offcanvasExampleLabel">
+    aria-labelledby="offcanvasExampleLabel"  #menuContact>
     <div class="offcanvas-header w-100">
       <h5 class="offcanvas-title w-100" id="offcanvasExampleLabel">
         <div class="d-flex justify-content-between">
           <div class="dark_mode  mb-0">
             <label class="ui-switch">
-              <input type="checkbox" (change)="toggleDarkMode()">
+              <input type="checkbox" (change)="toggleDarkMode()" [checked]="isDark">
               <div class="slider">
                 <div class="circle"></div>
               </div>
@@ -85,11 +86,11 @@
     </div>
     <div class="offcanvas-body">
       <ul class="gap-4 mt-5">
-        <li class="page" routerLink="/home" routerLinkActive="active-page">{{'header.home'|translate}}</li>
-        <li class="page mt-3" routerLink="#" routerLinkActive="active-page">{{'header.skils'|translate}}</li>
-        <li class="page mt-3" routerLink="#" routerLinkActive="active-page">{{'header.projects'|translate}}</li>
-        <li class="page mt-3" routerLink="#" routerLinkActive="active-page">{{'header.about'|translate}}</li>
-        <li class="page mt-3" routerLink="#" routerLinkActive="active-page">{{'header.contact'|translate}}</li>
+        <li class="page" (click)="toggleMenu()" (click)="scrollToSection('home')" id="home">{{'header.home'|translate}}</li>
+        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('skils')" id="skils">{{'header.skils'|translate}}</li>
+        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('projects')" id="projects">{{'header.projects'|translate}}</li>
+        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('about')" id="about">{{'header.about'|translate}}</li>
+        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('contact')" id="contact">{{'header.contact'|translate}}</li>
       </ul>
     </div>
   </div>

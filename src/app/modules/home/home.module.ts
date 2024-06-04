@@ -8,10 +8,11 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SkilsComponent } from './page/home/skils/skils.component';
+import { ProjectsComponent } from './page/home/projects/projects.component';
 
 
 @NgModule({
-  declarations: [HomeComponent,ContactusComponent,AboutusComponent, SkilsComponent],
+  declarations: [HomeComponent,ContactusComponent,AboutusComponent, SkilsComponent, ProjectsComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
