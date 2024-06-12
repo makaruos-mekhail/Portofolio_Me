@@ -15,7 +15,7 @@ export class AboutusComponent implements OnInit {
 
 
   projectDetails = {
-    image: 'assets/image/home/img.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsoZHAOACc4Tpme0cvaxjdRYckM024_fxWBw&s',
     productName: 'makaruos Product'
   };
 

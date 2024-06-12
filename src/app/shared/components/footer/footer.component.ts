@@ -7,6 +7,7 @@ import { ThemeDarkService } from '../../Theme_dark/theme-dark.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  email: string ='makaruosmekhail@gmail.com';
   constructor(private themeService: ThemeDarkService) {
   }
   

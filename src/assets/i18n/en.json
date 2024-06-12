@@ -4,7 +4,9 @@
     "skils": "Skils",
     "projects": "Projects",
     "about": "About Us",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "Desc_":"We specialize in precision CNC Machining of metal and plastic parts to service a vast range of industries throughout Egypt in any volume with a 100% Satisfaction Guarantee."
+
   },
   "home":{
     "Hello":"Hello, I'm",
@@ -12,5 +14,15 @@
     "job":"Full Stack Dot Net & Angular Developer",
     "download":"Download CV",
     "Welcome":"Welcome to my porotfolio !. I'am a passionate frontend developer dedicated . to creating exceptional user experience. With a strong background in Angular , HTML5 ,. CSS3 , JavaScript and Dot Net Developer"
+  },
+  "footer": {
+    "reach_us_Now": "Reach us Now",
+    "connect_with": "Connect with us now to explore our services and offerings",
+    "all_rights": "All rights reserved, by Makaros Mekhail ©2024",
+    "message": "Message",
+    "send_Now": "Send Now",
+    "name": "Name",
+    "email": "Email",
+    "phone_Number": "Phone Number"
   }
 }
