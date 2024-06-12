@@ -1,1 +1,6 @@
 <p  class=" mb-0">aboutus works!</p>
+<button (click)="shareLink()">Share Project</button>
+<div *ngIf="image && productName">
+    <img [src]="image" alt="Product Image">
+    <h1>{{ productName }}</h1>
+  </div>

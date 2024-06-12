@@ -12,6 +12,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
     NgbModule,
     NgbCarouselModule,
     SharedModule,
+    ClipboardModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
