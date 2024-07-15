@@ -1,0 +1,16 @@
+<div [ngClass]="getCurrentThemeClass('Services')">
+  <div class="pt-4">
+    <div class="title-section">
+      <app-title-section [NameTitle]="NameTitle" />
+    </div>
+    <div class="row m-0 p-3 d-flex">
+      <div class="col-12 col-sm-3 p-3" *ngFor="let item of itemServices" #ServicesAnimation>
+        <div class="style_services">
+          <i [ngClass]="item.icon"></i>
+          <p class="title">{{ item.title | translate }}</p>
+          <div class="desc">{{ item.desc | translate }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,7 +13,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { ClipboardModule } from 'ngx-clipboard';
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     NgbModule,
     NgbCarouselModule,
     SharedModule,
+    ToastrModule.forRoot(),
     ClipboardModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({

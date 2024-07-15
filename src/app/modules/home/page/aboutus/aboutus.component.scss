@@ -1,0 +1,109 @@
+@import "../../../../../assets/style/main.scss";
+
+.aboutUs,
+.aboutUs_light {
+  background-color: white;
+  .Div_detail {
+    padding-inline: 2rem !important;
+
+    .heading {
+      font-size: 28px;
+      padding: 10px;
+      color: black;
+      font-family: var(--Nunito);
+      font-weight: bold;
+
+      @include mobile-only {
+        font-size: 20px;
+        padding-bottom: 0px;
+      }
+    }
+
+    .desc {
+      padding: 10px;
+      background: linear-gradient(to right, black, #777777);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      font-family: var(--Nunito);
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+
+      @include mobile-only {
+        font-size: 15px;
+        padding-bottom: 0px;
+        width: 100%;
+      }
+    }
+
+    .Div_ex {
+      .img_Section20 {
+        color: black;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+
+        @include mobile-only {
+          font-size: 22px;
+        }
+      }
+
+      .style_iconTitle {
+        color: black;
+        font-family: var(--Nunito);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px;
+
+        @include mobile-only {
+          font-size: 12px;
+          line-height: normal;
+        }
+      }
+
+      .style_iconDesc {
+        color: #7f7f7f;
+        font-family: var(--Nunito);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 24px;
+
+        @include mobile-only {
+          font-size: 11px;
+          line-height: normal;
+
+        }
+      }
+    }
+  }
+}
+
+.aboutUs_light {
+  .Div_detail {
+    .heading {
+      color: #002542;
+    }
+
+    .desc {
+      background: linear-gradient(to right, #002542, #00254294);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .Div_ex {
+      .img_Section20 {
+        color: #002542;
+      }
+
+      .style_iconTitle {
+        color: #002542;
+      }
+    }
+  }
+}

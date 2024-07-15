@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ThemeDarkService } from '../../Theme_dark/theme-dark.service';
+import { ScrollService } from '../../ScrollService-ToSection/scroll.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +9,7 @@ import { ThemeDarkService } from '../../Theme_dark/theme-dark.service';
 })
 export class FooterComponent {
   email: string ='makaruosmekhail@gmail.com';
-  constructor(private themeService: ThemeDarkService) {
+  constructor(private themeService: ThemeDarkService,private scrollService: ScrollService) {
   }
   
   // dark mode
@@ -18,5 +19,9 @@ export class FooterComponent {
 
   getCurrentThemeClass(value:string) {
     return this.themeService.getCurrentThemeClass(value);
+  }
+
+  scrollToSection(section: string): void {
+    this.scrollService.scrollTo(section);
   }
 }

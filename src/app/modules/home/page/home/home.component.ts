@@ -1,21 +1,16 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ThemeDarkService } from 'src/app/shared/Theme_dark/theme-dark.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { ScrollService } from 'src/app/shared/ScrollService-ToSection/scroll.service';
+import { AnimationService } from 'src/app/shared/services-Animation/animation.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-
-  sentence: string = '';
-  delay: number = 70;
-  output: string = '';
-
-
+export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
   @ViewChild('home') homeSection!: ElementRef;
   @ViewChild('skils') skilsSection!: ElementRef;
   @ViewChild('projects') projectsSection!: ElementRef;
@@ -23,9 +18,28 @@ export class HomeComponent implements OnInit {
   @ViewChild('contact') contactSection!: ElementRef;
   private scrollSubscription!: Subscription;
 
+
+  constructor(private themeService: ThemeDarkService, private translate: TranslateService, private scrollService: ScrollService,
+    private animationService: AnimationService) {
+  }
+
+  ngOnInit(): void {
+    // Print one letter at a time and translate to en or ar 
+    this.translate.get('home.Welcome').subscribe((translation: string) => {
+      this.sentence = translation;
+      this.printSentence();
+    });
+
+    // scrollToSection 
+    this.scrollSubscription = this.scrollService.scrollToSection$.subscribe(section => {
+      this.scrollToSection(section);
+    });
+  }
+
+  // scrollToSection 
   scrollToSection(section: string): void {
     let element: HTMLElement;
-    switch(section) {
+    switch (section) {
       case 'home':
         element = this.homeSection.nativeElement;
         break;
@@ -57,21 +71,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.translate.get('home.Welcome').subscribe((translation: string) => {
-      this.sentence = translation;
-      this.printSentence();
-    });
 
-    
-    this.scrollSubscription = this.scrollService.scrollToSection$.subscribe(section => {
-      this.scrollToSection(section);
-    });
-  }
 
-  // ngOnInit(): void {
-  //   this.printSentence();
-  // }
+  //Print one letter at a time
+  sentence: string = '';
+  delay: number = 70;
+  output: string = '';
 
   printSentence() {
     const words = this.sentence.split(' ');
@@ -99,8 +104,6 @@ export class HomeComponent implements OnInit {
   }
 
 
-  constructor(private themeService: ThemeDarkService,private translate: TranslateService,private scrollService: ScrollService) {
-  }
 
   // dark mode
   toggleDarkMode() {
@@ -113,14 +116,45 @@ export class HomeComponent implements OnInit {
 
 
 
-    // downloadPDF
-    downloadPDF(filePath: string): void {
-      const a = window.document.createElement('a');
-      const fileName = filePath.split('/').pop();
-      a.setAttribute('href', filePath);
-      a.setAttribute('download', fileName || 'downloadedFile.pdf');
-      window.document.body.appendChild(a);
-      a.click();
-      window.document.body.removeChild(a);
+  // downloadPDF
+  downloadPDF(filePath: string): void {
+    const a = window.document.createElement('a');
+    const fileName = filePath.split('/').pop();
+    a.setAttribute('href', filePath);
+    a.setAttribute('download', fileName || 'downloadedFile.pdf');
+    window.document.body.appendChild(a);
+    a.click();
+    window.document.body.removeChild(a);
+  }
+
+
+  //Animation
+  @ViewChildren('ImagePortofolio, TextAnimation') animatedElements?: QueryList<ElementRef>;
+
+
+  ngAfterViewInit(): void {
+    if (this.animatedElements) {
+      this.animatedElements.forEach(element => {
+        this.animationService.addElement(element);
+      });
+      this.animationService.onScroll();
     }
+  }
+
+  ngOnDestroy(): void {
+    if (this.animatedElements) {
+      this.animatedElements.forEach(element => {
+        this.animationService.removeElement(element);
+      });
+    }
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    this.animationService.onScroll();
+  }
+
+
+
+
 }

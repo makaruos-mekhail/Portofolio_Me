@@ -16,11 +16,11 @@ export class AnimationService {
   }
 
   private updateElementVisibility(element: ElementRef): void {
-    const sectionOffset = element.nativeElement.offsetTop;
+    const rect = element.nativeElement.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const pageOffset = window.pageYOffset;
 
-    if (pageOffset >= sectionOffset - windowHeight && pageOffset < sectionOffset) {
+    if (rect.top<= windowHeight && rect.top>= 0) {
+      // if ((rect.top <= windowHeight && rect.top >= 0) && (rect.bottom <= windowHeight && rect.bottom >= 0)) {
       this.showElement(element);
     } else {
       this.hideElement(element);
@@ -28,15 +28,19 @@ export class AnimationService {
   }
 
   private showElement(element: ElementRef): void {
-    element.nativeElement.classList.remove('hide_opacity');
-    element.nativeElement.classList.add('Show_opacity');
-    this.elements.set(element, true);
+    if (!this.elements.get(element)) {
+      element.nativeElement.classList.remove('hide_opacity');
+      element.nativeElement.classList.add('Show_opacity');
+      this.elements.set(element, true);
+    }
   }
 
   private hideElement(element: ElementRef): void {
-    element.nativeElement.classList.remove('Show_opacity');
-    element.nativeElement.classList.add('hide_opacity');
-    this.elements.set(element, false);
+    if (this.elements.get(element)) {
+      element.nativeElement.classList.remove('Show_opacity');
+      element.nativeElement.classList.add('hide_opacity');
+      this.elements.set(element, false);
+    }
   }
 
   onScroll(): void {

@@ -1,37 +1,38 @@
+<div [ngClass]="getCurrentThemeClass('Projects')">
 
+  <div class="pt-4">
+    <app-title-section [NameTitle]="NameTitle" />
 
-
-      <!-- section 2 About-->
-      <aside class="image-container">
-        <article>
-          <p id="#About" style="color: brown;">About</p>
-
-        </article>
-      </aside>
-      <!-- section 2 -->
-
-
-      <!-- section 3 -->
-      <aside class="image-container2">
-        <article>
-          <p id="#Skils" style="color: brown;">Skils</p>
-
-        </article>
-      </aside>
-      <!-- section  3-->
-
-      <!-- section 4 -->
-      <aside class="image-container3">
-        <article>
-          <p id="#Projects" style="color: brown;">Projects</p>
-        </article>
-      </aside>
-      <!-- section 4 -->
-
-      <!-- section 5 -->
-      <aside class="image-container3">
-        <article>
-          <p id="#Contact" style="color: brown;">Contact</p>
-        </article>
-      </aside>
-      <!-- section 5 -->
+    <div class="Project_90">
+      <div class="keen-slider Project_" #sliderRef>
+        <div class="keen-slider__slide " *ngFor="let item of itemProjects">
+          <div class="card_style mt-5 me-2 ms-2" #ProjectAnimation>
+            <div class="card">
+              <img [src]="item?.image" class="w-100 h-100" alt="">
+              <p class="heading">{{ item.title |translate }} <i class="fa-solid fa-link"></i></p>
+              <div class="overlay">
+                <div class="desc_cardBtn">
+                  <div class="desc">{{ item.desc |translate }}</div>
+                  <a [href]="item?.link"><button
+                      class="card-btn">{{ 'home.view'|translate }}</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row m-0 d-flex justify-content-center">
+      <div class="col-6 d-flex justify-content-center mt-5">
+        <p class="d-flex">
+          <span class="icon_size_slidOne">
+            <i class="fa-solid fa-circle ms-2 me-2" (click)="goToNextSlide()"></i>
+          </span>
+          <span class="icon_size_slidTwo">
+            <i class="fa-solid fa-circle ms-2 me-2" (click)="goToPrevSlide()"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

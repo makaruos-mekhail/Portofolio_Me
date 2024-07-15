@@ -1,47 +1,57 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { Meta, Title } from '@angular/platform-browser';
+import { ThemeDarkService } from 'src/app/shared/Theme_dark/theme-dark.service';
+import { TranslateService } from '@ngx-translate/core';
+import { AnimationService } from 'src/app/shared/services-Animation/animation.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-aboutus',
   templateUrl: './aboutus.component.html',
   styleUrls: ['./aboutus.component.scss']
 })
-export class AboutusComponent  implements OnInit {
-  image?: string;
-  productName?: string;
+export class AboutusComponent {
+  NameTitle :string ='header.about';
 
-  projectDetails = {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsoZHAOACc4Tpme0cvaxjdRYckM024_fxWBw&s',
-    productName: 'Portofolio Me'
-  };
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private clipboard: Clipboard,
-    private titleService: Title
-  ) {}
-
-  shareLink() {
-    const url = new URL(window.location.href);
-    url.searchParams.set('image', this.projectDetails.image);
-    url.searchParams.set('productName', this.projectDetails.productName);
-    this.clipboard.copy(url.toString());
+  constructor(private themeService: ThemeDarkService, private translate: TranslateService,
+    private animationService: AnimationService,private toastrService: ToastrService) {
+  }
+  // dark mode
+  toggleDarkMode() {
+    this.themeService.toggleDarkMode();
   }
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.image = params['image'] || this.projectDetails.image;
-      this.productName = params['productName'] || this.projectDetails.productName;
-
-      const validImage = this.image || 'default-image.jpg';
-      const validProductName = this.productName || 'Default Product Name';
-
-      // Update Meta Tags
-      this.titleService.setTitle(validProductName);
-    });
+  getCurrentThemeClass(value: string) {
+    return this.themeService.getCurrentThemeClass(value);
   }
 
+
+  //Animation
+  @ViewChildren('AboutusAnimation')
+  animatedElements?: QueryList<ElementRef>;
+
+  ngAfterViewInit(): void {
+    if (this.animatedElements) {
+      this.animatedElements.forEach((element) => {
+        this.animationService.addElement(element);
+      });
+      this.animationService.onScroll();
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.animatedElements) {
+      this.animatedElements.forEach((element) => {
+        this.animationService.removeElement(element);
+      });
+    }
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    this.animationService.onScroll();
+  }
 }

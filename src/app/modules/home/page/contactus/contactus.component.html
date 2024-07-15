@@ -1,10 +1,48 @@
-<p>contactus works!</p>
-<form class="contact-form" (submit)="sendEmail($event)">
-    <label>Name</label>
-    <input type="text" name="user_name">
-    <label>Email</label>
-    <input type="email" name="user_email">
-    <label>Message</label>
-    <textarea name="message"></textarea>
-    <input type="submit" value="Send">
-  </form>
+<div [ngClass]="getCurrentThemeClass('contactus')">
+  <div id="stars-container">
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <div class="pt-4">
+      <app-title-section [NameTitle]="NameTitle" />
+
+      <div class="row m-0 p-0 d-flex justify-content-center mt-4  ">
+
+        <div class="col-12 col-sm-5 div1 m-auto" #ContactusAnimation>
+          <div class="contact-form-wrapper d-flex justify-content-center">
+            <form (submit)="sendEmail($event)" class="contact-form" #contactForm="ngForm">
+              <div>
+                <input type="text" class="form-control rounded border-white mb-3 form-input" id="name"
+                  placeholder="{{ 'contact-us.name'|translate }}" required name="user_name">
+              </div>
+              <div>
+                <input type="email" class="form-control rounded border-white mb-3 form-input"
+                  placeholder="{{ 'contact-us.email'|translate }}" required name="user_email">
+              </div>
+              <div>
+                <input type="tel" class="form-control rounded border-white mb-3 form-input"
+                  placeholder="{{ 'contact-us.phone'|translate }}" required name="user_phone"
+                  pattern="\d{11}" maxlength="11" (input)="validateInput($event)">
+              </div>
+              <div>
+                <textarea id="message" class="form-control rounded border-white mb-3 form-text-area" rows="5" cols="30"
+                  placeholder="{{ 'contact-us.message'|translate }}" required
+                  name="message"></textarea>
+              </div>
+              <div class="submit-button-wrapper">
+                <button class="button" type="submit"
+                  [disabled]="!contactForm.form.valid">{{ 'contact-us.Submit' | translate }}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-5 div2 m-auto" #ContactusAnimation>
+          <img src="assets/image/Contactus/contact2.png" class="w-100 h-100" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

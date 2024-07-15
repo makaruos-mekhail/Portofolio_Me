@@ -1,2 +1,60 @@
-<p  class=" mb-0">aboutus works!</p>
-<button (click)="shareLink()">Share Project</button>
+<div [ngClass]="getCurrentThemeClass('aboutUs')">
+  <div class="pt-4">
+    <app-title-section [NameTitle]="NameTitle" />
+
+    <div class="row m-0 p-0 d-flex justify-content-center mt-4  Div_detail">
+      <div class="col-12 col-sm-6 AboutusAnimation1">
+        <p class="heading" #AboutusAnimation>{{ 'aboutus.heading' | translate }}</p>
+        <div class="desc" #AboutusAnimation>{{ 'aboutus.desc' | translate }}</div>
+        <div>
+          <div class="row m-0 p-0 Div_ex m-auto p-2">
+            <div class="col-6 col-sm-6 row m-0 p-2 p-sm-0 mt-4" #AboutusAnimation>
+              <div class="col-3 m-auto">
+                <!-- <img src="assets/icon/icon1.svg" alt="" class="img_Section2"> -->
+                <i class="fa-solid fa-users img_Section20"></i>
+              </div>
+              <div class="col-9 m-auto">
+                <div class="style_iconTitle">{{ 'homesection2.item1'|translate }}</div>
+                <div class="style_iconDesc">{{ 'homesection2.item1_desc'|translate }}</div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 row m-0 p-2 p-sm-0 mt-4" #AboutusAnimation>
+              <div class="col-3 m-auto">
+                <!-- <img src="assets/icon/icon3.svg" alt="" class="img_Section2"> -->
+                <i class="fa-solid fa-laptop-code img_Section20"></i>
+              </div>
+              <div class="col-9 m-auto">
+                <div class="style_iconTitle">{{ 'homesection2.item2'|translate }}</div>
+                <div class="style_iconDesc">{{ 'homesection2.item2_desc'|translate }}</div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 row m-0 p-2 p-sm-0 mt-4" #AboutusAnimation>
+              <div class="col-3 m-auto">
+                <!-- <img src="assets/icon/icon2.svg" alt="" class="img_Section2"> -->
+                <!-- <i class="fa-solid fa-person-circle-check img_Section20" ></i> -->
+                <i class="fa-solid fa-hand-holding-heart img_Section20"></i>
+              </div>
+              <div class="col-9 m-auto">
+                <div class="style_iconTitle">{{ 'homesection2.item3'|translate }}</div>
+                <div class="style_iconDesc">{{ 'homesection2.item3_desc'|translate }}</div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 row m-0 p-2 p-sm-0 mt-4" #AboutusAnimation>
+              <div class="col-3 m-auto">
+                <!-- <img src="assets/icon/icon4.svg" alt="" class="img_Section2"> -->
+                <i class="fa-solid fa-award img_Section20"></i>
+              </div>
+              <div class="col-9 m-auto">
+                <div class="style_iconTitle">{{ 'homesection2.item4'|translate }}</div>
+                <div class="style_iconDesc">{{ 'homesection2.item4_desc'|translate }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 d-flex AboutusAnimation2">
+        <img src="assets/image/aboutus/4.png" class="w-100 h-100 m-auto" #AboutusAnimation alt="">
+      </div>
+    </div>
+  </div>
+</div>

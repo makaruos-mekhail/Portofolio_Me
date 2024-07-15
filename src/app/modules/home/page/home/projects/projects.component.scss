@@ -1,36 +1,161 @@
+@import "../../../../../../assets/style/main.scss";
 
-  /* section 2 (---About---) */
-  .image-container {
-    width: 100%;
-    height: 400px;
-    background-size: -80% 100%;
-    background-image: linear-gradient(-8deg,
-    #000000 50%,
-         white 10%);
+
+.Projects,
+.Projects_light {
+  background-color: black;
+  color: white;
+
+  padding: 50px 0;
+
+  .Project_90 {
+    width: 90%;
+    justify-content: center;
+    display: flex;
+    margin: auto;
   }
-  
-  
-  .image-container2 {
-    width: 100%;
-    height:400px;
-    background-size: -80% 100%;
-    background-image: linear-gradient(-8deg,
-        #000000 30%,
-        #c8c8c8 10%);
+
+  .Project_ {
+    .card_style {
+      @include tablet-and-up {
+        width: 95%;
+      }
+
+      @include mobile-only {
+        width: 95%;
+      }
+    }
+
+    .card {
+      width: 100%;
+      height: auto;
+      padding: 10px 0px 0px 0px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background: linear-gradient(180deg, #DAC5A7 0%, rgba(127, 116, 132, 0.60) 85.5%, rgba(1, 66, 117, 0.10) 100%);
+      border-bottom: 2px solid #DAC5A7;
+    }
+
+    img {
+      padding: 20px 0;
+    }
+
+    .heading {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      width: 100%;
+      text-align: center;
+      background-color: #35312c;
+      margin-bottom: 0px;
+      line-height: 50px;
+      font-family: var(--Nunito);
+
+      @include mobile-only {
+        font-size: 18px;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card .desc_cardBtn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      scale: 0;
+      transform-origin: 0 0;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+      z-index: 999;
+      width: 85%;
+    }
+
+    .card:hover .desc_cardBtn {
+      opacity: 1;
+      scale: 1;
+    }
+
+    a {
+      margin: auto;
+    }
+
+    .card-btn {
+      font-weight: 600;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffffff;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 999;
+      border: none;
+      font-family: var(--Nunito);
+      color: #35312c;
+      font-weight: 800;
+    }
+
+    .desc {
+      color: white;
+      text-align: center;
+      margin-bottom: 10px;
+      font-family: var(--Nunito);
+    }
+
+    .overlay::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover .overlay::after {
+      transform: translate(-50%, -50%) scale(2);
+    }
   }
-  
-  /* section 2 (---About---) */
-  
-  
-  
-  
-  
-  
-  
-  .image-container3 {
-    width: 100%;
-    height: 500px;
-    background-color: #000000;
-    background-size: cover;
-  
+
+  .icon_size_slidTwo,
+  .icon_size_slidOne {
+    color: #DAC5A7;
   }
+
+}
+
+.Projects_light {
+  background: #2c374b;
+
+  .Project_ {
+    .heading {
+      background-color: #35425a;
+    }
+  }
+}

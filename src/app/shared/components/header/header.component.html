@@ -7,10 +7,10 @@
     <li class="m-auto col_center col-4">
       <ul class="d-flex justify-content-between">
         <!-- routerLink="/home" routerLinkActive="active-page" -->
-        <li class="page Ul"  (click)="scrollToSection('home')" id="home">{{'header.home'|translate}}</li>
-        <li class="page" (click)="scrollToSection('skils')" id="skils">{{'header.skils'|translate}}</li>
-        <li class="page" (click)="scrollToSection('projects')" id="projects">{{'header.projects'|translate}}</li>
+        <li class="page" (click)="scrollToSection('home')" id="home">{{'header.home'|translate}}</li>
         <li class="page" (click)="scrollToSection('about')" id="about">{{'header.about'|translate}}</li>
+        <li class="page" (click)="scrollToSection('projects')" id="projects">{{'header.projects'|translate}}</li>
+        <li class="page" (click)="scrollToSection('skils')" id="skils">{{'header.skils'|translate}}</li>
         <li class="page" (click)="scrollToSection('contact')" id="contact">{{'header.contact'|translate}}</li>
       </ul>
     </li>
@@ -30,15 +30,6 @@
             </div>
           </label>          
         </div>
-        <!-- <div class="button2">
-          <i class="fa-brands fa-instagram"></i>
-        </div>
-        <div class="button3">
-          <i class="fa-brands fa-x-twitter"></i>
-        </div>
-        <div class="button4">
-          <i class="fa-brands fa-facebook"></i>
-        </div> -->
       </div>
     </li>
   </ul>
@@ -86,11 +77,11 @@
     </div>
     <div class="offcanvas-body">
       <ul class="gap-4 mt-5">
-        <li class="page" (click)="toggleMenu()" (click)="scrollToSection('home')" id="home">{{'header.home'|translate}}</li>
-        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('skils')" id="skils">{{'header.skils'|translate}}</li>
-        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('projects')" id="projects">{{'header.projects'|translate}}</li>
-        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('about')" id="about">{{'header.about'|translate}}</li>
-        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('contact')" id="contact">{{'header.contact'|translate}}</li>
+        <li class="page" (click)="toggleMenu()" (click)="scrollToSection('home')" id="home"><span>{{'header.home'|translate}}</span></li>
+        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('about')" id="about"><span>{{'header.about'|translate}}</span></li>
+        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('projects')" id="projects"><span>{{'header.projects'|translate}}</span></li>
+        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('skils')" id="skils"><span>{{'header.skils'|translate}}</span></li>
+        <li class="page mt-3" (click)="toggleMenu()" (click)="scrollToSection('contact')" id="contact"><span>{{'header.contact'|translate}}</span></li>
       </ul>
     </div>
   </div>
@@ -98,7 +89,7 @@
 <div class="pad"></div>
 <app-screen-loadar></app-screen-loadar>
 
-<div  class="main" [ngClass]="{'show-scrollTop': windowScrolled}">
+<!-- <div  class="main" [ngClass]="{'show-scrollTop': windowScrolled}">
   <div class="redes_style" >
     <div class="redes">
       <a class="instagram" href="#">
@@ -115,8 +106,9 @@
       </a>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="main" (click)="scrollToTop()" [ngClass]="{'show-scrollTop': windowScrolled}">
   <p class="scroll"><i class=" fa-solid fa-arrow-up"></i></p>
 </div>
+

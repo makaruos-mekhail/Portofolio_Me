@@ -1,0 +1,222 @@
+@import "../../../../../assets/style/main.scss";
+
+.contactus,
+.contactus_light {
+  //background animateStars
+  @mixin translate50 {
+    transform: translate(-50%, -50%);
+  }
+  
+  @mixin roundedCorners {
+    border-radius: 50%;
+  }
+  
+  @mixin rotateBase {
+    transform: rotate3d(-1, 1, 0, 0deg);
+  }
+  
+  @mixin rotateRight {
+    transform: rotate3d(-1, 1, 0, 30deg);
+  }
+  
+  @mixin rotateLeft {
+    transform: rotate3d(-1, 1, 0, -30deg);
+  }
+  
+  @function generateStars($n) {
+    $value: '#{0} #{random(2000)}px #{random(2000)}px #FFF';
+  
+    @for $i from 2 through $n {
+      $value: '#{$value}, #{random(2000)}px #{random(2000)}px #FFF';
+    }
+  
+    @return unquote($value);
+  }
+  
+  $stars-small: generateStars(700);
+  $stars-medium: generateStars(200);
+  $stars-big: generateStars(100);
+  
+  #stars-container {
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(ellipse at bottom, #000000d8 0%, #000000 100%);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #stars,
+  #stars2,
+  #stars3 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    @include translate50;
+    background: transparent;
+    @include roundedCorners;
+    animation: animateStars 30s ease-in-out infinite;
+  }
+  
+  #stars {
+    width: 1px;
+    height: 1px;
+    box-shadow: $stars-small;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: $stars-small;
+      @include roundedCorners;
+    }
+  }
+  
+  #stars2 {
+    width: 2px;
+    height: 2px;
+    box-shadow: $stars-medium;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: transparent;
+      box-shadow: $stars-medium;
+      @include roundedCorners;
+    }
+  }
+  
+  #stars3 {
+    width: 3px;
+    height: 3px;
+    box-shadow: $stars-big;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: transparent;
+      box-shadow: $stars-big;
+      @include roundedCorners;
+    }
+  }
+  
+  @keyframes animateStars {
+    0% {
+      @include rotateBase;
+    }
+    25% {
+      @include rotateRight;
+    }
+    50% {
+      @include rotateBase;
+    }
+    75% {
+      @include rotateLeft;
+    }
+    100% {
+      @include rotateBase;
+    }
+  }
+  //background animateStars
+
+
+
+  
+  .div1 {
+    @include mobile-only {
+      order: 2;
+    }
+  }
+
+  .div2 {
+    @include mobile-only {
+      order: 1;
+    }
+  }
+
+  .contact-form-wrapper {
+    padding: 100px 0;
+
+    @include mobile-only {
+      padding: 15px 0;
+    }
+  }
+
+  .contact-form {
+    padding: 30px 40px;
+    background-color: #f7f5f5;
+    border-radius: 12px;
+    width: 90%;
+  }
+
+  .contact-form textarea {
+    resize: none;
+  }
+
+  .contact-form .form-input,
+  .form-text-area {
+    background-color: #f0f4f5dc;
+    height: 50px;
+    padding-left: 16px;
+    border-bottom: 2px solid #DAC5A7 !important;
+    font-family: var(--Nunito);
+  }
+
+  .contact-form .form-text-area {
+    background-color: #f0f4f5;
+    height: auto;
+    padding-left: 16px;
+  }
+
+  .contact-form .form-control::placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+    opacity: 1;
+  }
+
+  .contact-form .form-control:-ms-input-placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+  }
+
+  .contact-form .form-control::-ms-input-placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+  }
+
+  .contact-form .form-control:focus {
+    border-color: #DAC5A7;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px #DAC5A7;
+  }
+
+  .contact-form .submit-button-wrapper {
+    text-align: center;
+  }
+
+  .contact-form .submit-button-wrapper button {
+    border: none;
+    border-radius: 4px;
+    background-color: #DAC5A7;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  .contact-form .submit-button-wrapper button:hover {
+    background-color: #DAC5A7;
+  }
+}
+
+
+.contactus_light {
+  #stars-container {
+    background: radial-gradient(ellipse at bottom, #2c374bd6 0%, #2c374b 100%);
+  }
+}

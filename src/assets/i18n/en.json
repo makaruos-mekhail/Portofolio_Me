@@ -3,17 +3,73 @@
     "home": "Home",
     "skils": "Skils",
     "projects": "Projects",
+    "service": "Services",
     "about": "About Us",
-    "contact": "Contact Us",
-    "Desc_":"We specialize in precision CNC Machining of metal and plastic parts to service a vast range of industries throughout Egypt in any volume with a 100% Satisfaction Guarantee."
-
+    "contact": "Contact Us"
   },
   "home":{
     "Hello":"Hello, I'm",
     "name_me":"Makaruos Mekhail Yousab",
-    "job":"Full Stack Dot Net & Angular Developer",
+    "job":"Frontend Angular Developer",
     "download":"Download CV",
-    "Welcome":"Welcome to my porotfolio !. I'am a passionate frontend developer dedicated . to creating exceptional user experience. With a strong background in Angular , HTML5 ,. CSS3 , JavaScript and Dot Net Developer"
+    "Welcome":"Welcome to my porotfolio !. I'am a passionate frontend developer dedicated . to creating exceptional user experience. With a strong background in Angular , HTML5 ,. CSS3 , JavaScript and Dot Net Developer",
+    "view":"View Website"
+  },
+  "projects-details":{
+    "txtPro1":"Deoss Congress",
+    "txtPro2":"Hany George",
+    "txtPro3":"k-group Campany",
+    "txtPro4":"Origin Shop",
+    "txtPro5":"Sham Pistachio",
+    "txtPro6":"Prentex Shop",
+    "txtPro7":"FlexSign Shop",
+    "txtPro8":"Fanarah School",
+    "txtPro9":"Modevia Clinic",
+    "txtPro10":"Prints E-commerce",
+    "pro1":"This project is for the Deoss Congress World Eye Symposium, serving as an announcement and detail overview. It features many renowned ophthalmologists and specialists in eye diseases and diagnostics",
+    "pro2":"This project is owned by Hany George, serving as the official website for the company. It is dedicated to showcasing the company's products and providing detailed information about its offerings.",
+    "pro3":"This project is owned by k-group, serving as the official website for the company. It is dedicated to showcasing the company's products and providing detailed information about its offerings.",
+    "pro4":"This project is owned by Origin, serving as the official website for the company. It is dedicated to showcasing the company's products and providing detailed information about its offerings.",
+    "pro5":"This project is owned by Sham Pistachio stores, serving as their official website. It is dedicated to offering Eastern sweets, nuts, hot and cold beverages, and providing information about them.",
+    "pro6":"This project is owned by Printex, serving as the official website for the company. It is dedicated to showcasing the company's products and providing detailed information about its offerings.",
+    "pro7":"This project is owned by FlexSign, serving as the official website for the company. It is dedicated to showcasing the company's products and providing detailed information about its offerings.",
+    "pro8":"This project is owned by Fanarah Schools, and serves as the official website of the school. It is dedicated to providing services to students, submission through it, and information about them.",
+    "pro9":"This project is owned by Modevia Clinics, serving as the official website for the company. It is dedicated to knowing their services, clinics and hospitals.",
+    "pro10":"This project is owned by Prints, serving as the official website for the company. It is dedicated to displaying the company's products and making orders for all types of printing."
+  },
+  "services":{
+    "serviceTitle1":"Development",
+    "serviceTitle2":"Web design",
+    "serviceTitle3":"Frontend develop",
+    "serviceTitle4":"Content & Seo",
+    "serviceDesc1":"Get custom web development solutions that are tailored to your specifications, designed to deliver a flawless user experience.",
+    "serviceDesc2":"Visually stunning web designs  innovative and attention-grabbing product design services. by blending your brand voice and customer needs.",
+    "serviceDesc3":"Specialize in responsive and interactive front-end development. With a deep understanding of HTML, CSS, and JS.",
+    "serviceDesc4":"Proven SEO strategies that enhance your online performance, bringing you to the forefront of organic search results."
+   },
+   "aboutus":{
+    "heading":"We create unique ideas and designs in website design",
+    "desc":"We are a team of creatives dedicated to delivering innovative and custom solutions. We excel in graphic design, web design, and visual identity development. Our goal is to turn ideas into reality with exceptional designs that reflect our clients' visions and needs. We believe in the power of unique design to make a significant impact and always strive to exceed client expectations."
+   },
+  "homesection2": {
+    "item1": "CLIENTS",
+    "item1_desc": "+ 20",
+    "item2": "PROJECTS",
+    "item2_desc": "+ 50",
+    "item3": "HAPPY CLIENT",
+    "item3_desc": "+ 20",
+    "item4": "Year OF Experience",
+    "item4_desc": "+ 2"
+  },
+  "skils":{
+    "skils":"Skils"
+  },
+  "contact-us":{
+    "name" :"Your Name",
+    "email" :"Your Email",
+    "phone" :"Your Phone",
+    "message" :"Message",
+    "Submit" :"Submit"
   },
   "footer": {
     "reach_us_Now": "Reach us Now",

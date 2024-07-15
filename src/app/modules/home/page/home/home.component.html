@@ -1,10 +1,12 @@
-<div class="mb-0" [ngClass]="getCurrentThemeClass('home')"  #home>
+<div class="mb-0" [ngClass]="getCurrentThemeClass('home')" #home>
   <section class="row col-12 m-0">
-    <div class="col-12 col-sm-7 p-4 p-sm-5 m-auto">
-      <div>
-        <p class="heading mb-0">{{'home.Hello'|translate}}</p>
-        <p class="fonts mb-0">{{'home.name_me'|translate}}</p>
-        <p class="title mb-0">{{'home.job'|translate}}</p>
+    <div class="col-12 col-sm-7 p-4 p-sm-5 m-auto div-Start">
+      <div #TextAnimation>
+        <p class="heading mb-0">{{ 'home.Hello'|translate }}</p>
+        <div>
+          <p class="fonts mb-0">{{ 'home.name_me'|translate }}</p>
+        </div>
+        <p class="title mb-0">{{ 'home.job'|translate }}</p>
         <div class="desc mb-0">
           <p [innerHTML]="output"></p>
         </div>
@@ -16,10 +18,10 @@
           <a href="tel:01090342871" class="icon"><i class="fa-brands fa-whatsapp iconsHome"></i></a>
         </div>
         <div class="Download mt-3">
-          <button class="button" (click)="downloadPDF('assets/file/MakaruosMekhail(Full Stack).pdf')" >
+          <button class="button" (click)="downloadPDF('assets/file/MakaruosMekhail(Full Stack).pdf')">
             <span class="button_lg">
               <span class="button_sl"></span>
-              <span class="button_text">{{'home.download'|translate}}</span>
+              <span class="button_text">{{ 'home.download'|translate }}</span>
             </span>
           </button>
         </div>
@@ -27,20 +29,25 @@
       </div>
     </div>
     <div class="div-center col-12 col-sm-5 m-auto" style="position: relative;">
-      <img src="assets/image/home/MY-img.png" class="w-100 p-3 p-sm-5 img" alt="">
-
+      <div #ImagePortofolio>
+        <img src="assets/image/home/MY-img.png" class="w-100 p-3 p-sm-5 img" alt="">
+      </div>
     </div>
   </section>
 </div>
+<div #about >
+  <app-aboutus />
+</div>
+<div>
+  <app-services-home/>
+</div>
+<div #projects>
+  <app-projects />
+</div>
+
 <div #skils>
   <app-skils></app-skils>
 </div>
-<div #projects  style="height: 1000px;">
-  projects
-</div>
-<div #about  style="height: 1000px;">
-  <app-aboutus/>
-</div>
-<div #contact  style="height: 1000px;">
-  <app-contactus/>
+<div #contact >
+  <app-contactus />
 </div>

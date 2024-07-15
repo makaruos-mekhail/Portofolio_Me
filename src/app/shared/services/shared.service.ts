@@ -10,7 +10,7 @@ export class SharedService {
 
   constructor(private http: HttpClient) { }
   
-  url = 'https://dashboard.fanarah.net/api/';
+  url = 'https://';
   lang = sessionStorage.getItem('lang') ?? 'en';
 
   headers = new HttpHeaders()

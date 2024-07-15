@@ -1,3 +1,46 @@
-<div style="height: 1000px;">
-    Skils
+<div [ngClass]="getCurrentThemeClass('Skils')">
+  <div class="title-section">
+    <app-title-section [NameTitle]="NameTitle" />
+  </div>
+  <div class="row m-0 p-0">
+    <div class="col-12 col-sm-6 order_1" dir="ltr">
+      <div class="page">
+        <div class="grid-carousel">
+          <div class="box box-1"><button class="button"><img src="assets/image/Skils/Html.png" alt=""
+                class="button__image"></button></div>
+          <div class="box box-2"><button class="button"><img src="assets/image/Skils/TypeScript.png" alt=""
+                class="button__image"></button></div>
+          <div class="box box-3"><button class="button"><img src="assets/image/Skils/Scss.png" alt=""
+                class="button__image"></button></div>
+          <div class="box box-4"><button class="button"><img src="assets/image/Skils/Css.png" alt=""
+                class="button__image"></button></div>
+          <div class="box box-5"><button class="button"><img src="assets/image/Skils/Angular.png" alt=""
+                class="button__image"></button></div>
+          <div class="box box-6"><button class="button"><img src="assets/image/Skils/Js.png" alt=""
+                class="button__image"></button></div>
+          <div class="box box-7"><button class="button"><img src="assets/image/Skils/Github.png" alt=""
+                class="button__image"></button></div>
+          <div class="box box-8"><button class="button"><img src="assets/image/Skils/Boostrap.png" alt=""
+                class="button__image"></button></div>
+          <div class="box box-9"><button class="button"><img src="assets/image/Skils/APi.png" alt=""
+                class="button__image"></button></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 d-flex order_2">
+      <div class="m-auto">
+        <p class="Font_style " #skilsAnimation>
+          Angular | TypeScript | JavaScript | ES6 | HTML5 & Css3 | Sass | Animation scroll page | Restfull API |
+          Bootstrap | Primeng | ReactiveForm | Responsive Web Design | WordPress | SQL Server | Git | GitHub
+          | Data Structure | asp.net | C# | C++
+        </p>
+        <p class="Font_style" #skilsAnimation>Use Figma Ui&Ux - Permission & Authentication page | Scan Qr Code |
+          talwiend css</p>
+        <p class="Font_style" #skilsAnimation>Use cPanl provides the server and site management platform</p>
+        <p class="Font_style" #skilsAnimation>Soft Skills (Problem Solving | Teamwork | Self-Learning | Research Skills)
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

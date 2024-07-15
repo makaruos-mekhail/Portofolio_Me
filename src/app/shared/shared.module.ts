@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ScreenLoadarComponent } from './components/screen-loadar/screen-loadar.component';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { TitleSectionComponent } from './components/title-section/title-section.component';
 
 
 
@@ -12,7 +13,8 @@ import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [FooterComponent,
         // HeaderComponent,
-    ScreenLoadarComponent],
+    ScreenLoadarComponent,
+        TitleSectionComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -21,7 +23,8 @@ import { TranslateModule } from '@ngx-translate/core';
   exports: [
     // HeaderComponent,
     FooterComponent,
-    ScreenLoadarComponent
+    ScreenLoadarComponent,
+    TitleSectionComponent
   ],
 })
 export class SharedModule { }
