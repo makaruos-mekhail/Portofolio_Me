@@ -5,7 +5,8 @@ I am a software engineer specializing in designing and developing websites using
 
 SKILLS :
 
-Angular | TypeScript | JavaScript | ES6 | HTML5 & Css3 | Sass | Animation scroll page | Restfull API | Bootstrap | Primeng | ReactiveForm | Responsive Web Design | WordPress | SQL Server | Git | GitHub | Data Structure | asp.net | C# | C++
+Angular | TypeScript | JavaScript | ES6 | HTML5 & Css3 | Sass | Animation scroll page | Restfull API | Bootstrap | Primeng | ReactiveForm | Responsive Web Design | WordPress | SQL Server | Git | GitHub | Data Structure | asp.net | C# | C++ | KeenSlider | Darkmode | multi language
+
 Use Figma Ui&Ux - Permission & Authentication page | Scan Qr Code | talwiend css
 Use cPanl provides the server and site management platform
 Soft Skills (Problem Solving | Teamwork | Self-Learning | Research Skills)
