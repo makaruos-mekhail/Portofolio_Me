@@ -89,18 +89,22 @@ export class ProjectsComponent {
             clearTimeout(timeout)
           }
           function nextTimeout() {
-            clearTimeout(timeout)
-            // if (mouseOver) return
+            // {
+              // clearTimeout(timeout);
+              if (mouseOver) return
+            // }
             timeout = setTimeout(() => {
               slider.next()
             }, 2000)
           }
           slider.on("created", () => {
             slider.container.addEventListener("mouseover", () => {
-              // mouseOver = true
-              mouseOver = false
-              // clearNextTimeout()
-              nextTimeout()
+              // {
+                mouseOver = true
+                clearNextTimeout()
+                // mouseOver = false;
+                // nextTimeout();
+              // }
             })
             slider.container.addEventListener("mouseout", () => {
               mouseOver = false
