@@ -82,6 +82,48 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQFWZQ82" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <script>
+
+    // Define dataLayer and the gtag function.
+    
+    window.dataLayer = window.dataLayer || [];
+    
+    function gtag(){dataLayer.push(arguments);}
+    
+    // Set default consent for specific regions according to your requirements
+    
+    gtag('consent', 'default', {
+    
+    'ad_storage': 'denied',
+    
+    'ad_user_data': 'denied',
+    
+    'ad_personalization': 'denied',
+    
+    'analytics_storage': 'denied',
+    
+    'regions':['US', 'EG']
+    
+    });
+    
+    // Set default consent for all other regions according to your requirements
+    
+    gtag('consent', 'default', {
+    
+    'ad_storage': 'denied',
+    
+    'ad_user_data': 'denied',
+    
+    'ad_personalization': 'denied',
+    
+    'analytics_storage': 'denied'
+    
+    });
+    
+    </script>
+    
+    <!-- PASTE YOUR COOKIEHUB CMP CODE SNIPPET HERE -- >
 </body>
 
 </html>
