@@ -1,7 +1,7 @@
 <div class=" d-none d-sm-block" [ngClass]="getCurrentThemeClass('header_component')">
   <ul class="d-flex justify-content-between mb-0 bod">
     <li class="d-flex justify-content-start col-3">
-        <img loading="lazy" src="assets/image/home/My.png" class="img-icon" routerLink="/home">
+        <img  src="assets/image/home/My.png" class="img-icon" routerLink="/home">
           <span class="firstLetter order_"  routerLink="/home">MK</span>
     </li>
     <li class="m-auto col-4 col_center">
@@ -17,9 +17,9 @@
     <li class="d-flex justify-content-end col-3">
       <div class="d-flex gap-2">
         <button class="btn button1" type="button">
-          <img loading="lazy" (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
+          <img  (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
             style="width: 35px;border:1px solid rgb(163, 163, 163);border-radius: 50%;">
-          <img loading="lazy" (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
+          <img  (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
             style="width: 35px;border:1px solid rgb(163, 163, 163);border-radius: 50%;">
         </button>
         <div class="dark_mode m-auto mb-0">
@@ -37,15 +37,15 @@
 <div class="d-block d-sm-none" [ngClass]="getCurrentThemeClass('header_component_phone')">
   <ul class="d-flex justify-content-between mb-0 bod">
     <li class="d-flex justify-content-start col-3">
-      <img loading="lazy" src="assets/image/home/My.png" class="img-icon" routerLink="/home">
+      <img  src="assets/image/home/My.png" class="img-icon" routerLink="/home">
       <span class="firstLetter order_"  routerLink="/home">MK</span>
     </li>
     <li class="d-flex justify-content-end col-3">
       <div class="d-flex gap-2">
         <button class="btn button1" type="button">
-          <img loading="lazy" (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
+          <img  (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
             style="width: 35px;">
-          <img loading="lazy" (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
+          <img  (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
             style="width: 35px;">
         </button>
         <button class="btn btn_offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
