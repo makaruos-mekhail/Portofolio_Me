@@ -3,15 +3,48 @@
 .aboutUs,
 .aboutUs_light {
   background-color: white;
+
   .Div_detail {
     padding-inline: 2rem !important;
-
+    @include tablet-view-down {
+    padding-inline: 1rem !important;
+    }
     .heading {
       font-size: 28px;
       padding: 10px;
       color: black;
       font-family: var(--Nunito);
       font-weight: bold;
+      font-display: swap;
+
+      @include laptop-Inch-15 {
+        font-size: 24px;
+      }
+
+      @include laptop-Inch-14 {
+        font-size: 23px;
+      }
+
+      @include laptop-Inch-13 {
+        font-size: 21px;
+      }
+
+      @include laptop-Inch-12 {
+        font-size: 19px;
+      }
+
+      @include laptop-Inch-11 {
+        font-size: 17px;
+      }
+
+      @include tablet-view {
+        font-size: 16px;
+      }
+
+      @include tablet-view-down {
+        font-size: 15px;
+        margin-bottom: 0 !important;
+      }
 
       @include mobile-only {
         font-size: 20px;
@@ -30,6 +63,35 @@
       font-weight: bold;
       font-size: 20px;
       display: flex;
+      font-display: swap;
+
+      @include laptop-Inch-15 {
+        font-size: 18px;
+      }
+
+      @include laptop-Inch-14 {
+        font-size: 17px;
+      }
+
+      @include laptop-Inch-13 {
+        font-size: 16px;
+      }
+
+      @include laptop-Inch-12 {
+        font-size: 14px;
+      }
+
+      @include laptop-Inch-11 {
+        font-size: 13px;
+      }
+
+      @include tablet-view {
+        font-size: 13px;
+      }
+
+      @include tablet-view-down {
+        font-size: 12px;
+      }
 
       @include mobile-only {
         font-size: 15px;
@@ -44,7 +106,34 @@
         font-size: 40px;
         display: flex;
         justify-content: center;
-
+        font-display: swap;
+        @include laptop-Inch-15 {
+          font-size: 38px;
+        }
+  
+        @include laptop-Inch-14 {
+          font-size: 37px;
+        }
+  
+        @include laptop-Inch-13 {
+          font-size: 36px;
+        }
+  
+        @include laptop-Inch-12 {
+          font-size: 35px;
+        }
+  
+        @include laptop-Inch-11 {
+          font-size: 32px;
+        }
+  
+        @include tablet-view {
+          font-size: 30px;
+        }
+  
+        @include tablet-view-down {
+          font-size: 25px;
+        }
         @include mobile-only {
           font-size: 22px;
         }
@@ -56,8 +145,35 @@
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 28px;
-
+        line-height: auto;
+        font-display: swap;
+        @include laptop-Inch-15 {
+          font-size: 18px;
+        }
+  
+        @include laptop-Inch-14 {
+          font-size: 17px;
+        }
+  
+        @include laptop-Inch-13 {
+          font-size: 16px;
+        }
+  
+        @include laptop-Inch-12 {
+          font-size: 15px;
+        }
+  
+        @include laptop-Inch-11 {
+          font-size: 14px;
+        }
+  
+        @include tablet-view {
+          font-size: 14px;
+        }
+  
+        @include tablet-view-down {
+          font-size: 12px;
+        }
         @include mobile-only {
           font-size: 12px;
           line-height: normal;
@@ -70,8 +186,35 @@
         font-size: 18px;
         font-style: normal;
         font-weight: 800;
-        line-height: 24px;
-
+        line-height: auto;
+        font-display: swap;
+        @include laptop-Inch-15 {
+          font-size: 16px;
+        }
+  
+        @include laptop-Inch-14 {
+          font-size: 16px;
+        }
+  
+        @include laptop-Inch-13 {
+          font-size: 15px;
+        }
+  
+        @include laptop-Inch-12 {
+          font-size: 15px;
+        }
+  
+        @include laptop-Inch-11 {
+          font-size: 14px;
+        }
+  
+        @include tablet-view {
+          font-size: 13px;
+        }
+  
+        @include tablet-view-down {
+          font-size: 12px;
+        }
         @include mobile-only {
           font-size: 11px;
           line-height: normal;

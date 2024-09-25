@@ -34,6 +34,18 @@
       height: 500px;
       animation: block-rotate 100000ms linear infinite;
 
+      @include tablet-view {
+        gap: 15px;
+        width: 350px;
+        height: 350px;
+      }
+
+      @include tablet-view-down {
+        gap: 0px;
+        width: 270px;
+        height: 270px;
+      }
+
       @include mobile-only {
         gap: 35px;
         width: 300px;
@@ -86,6 +98,16 @@
         display: block;
         backdrop-filter: drop-shadow(0 0 5px #000);
         animation: img-rotate 100000ms linear infinite;
+
+        @include tablet-view-down {
+          width: 35px;
+          height: 35px;
+        }
+
+        @include mobile-only {
+          width: 35px;
+          height: 35px;
+        }
       }
     }
 
@@ -123,16 +145,41 @@
     background-clip: text;
     color: transparent;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.2em;
     display: flex;
     width: 90%;
     font-family: var(--Nunito);
 
+    @include laptop-Inch-13 {
+      font-size: 1.1em;
+      margin-bottom: 0px;
+    }
+
+    @include laptop-Inch-12 {
+      font-size: 1em !important;
+      margin-bottom: 0px;
+    }
+
+    @include laptop-Inch-11 {
+      font-size: 1em !important;
+      margin-bottom: 0px;
+    }
+
+    @include tablet-view {
+      font-size: 0.7em !important;
+      margin-bottom: 0px;
+    }
+
+    @include tablet-view-down {
+      font-size: 0.6em !important;
+      margin-bottom: 0px;
+    }
 
     @include mobile-only {
-      font-size: 15px;
+      font-size: 13px;
       padding-bottom: 0px;
       padding-inline: 2.5em;
+      margin-bottom: 0px;
       width: 100%;
     }
   }

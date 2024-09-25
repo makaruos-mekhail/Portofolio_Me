@@ -1,10 +1,10 @@
 <div class=" d-none d-sm-block" [ngClass]="getCurrentThemeClass('header_component')">
   <ul class="d-flex justify-content-between mb-0 bod">
     <li class="d-flex justify-content-start col-3">
-        <img src="assets/image/home/My.png" class="img-icon" routerLink="/home">
+        <img loading="lazy" src="assets/image/home/My.png" class="img-icon" routerLink="/home">
           <span class="firstLetter order_"  routerLink="/home">MK</span>
     </li>
-    <li class="m-auto col_center col-4">
+    <li class="m-auto col-4 col_center">
       <ul class="d-flex justify-content-between">
         <!-- routerLink="/home" routerLinkActive="active-page" -->
         <li class="page" (click)="scrollToSection('home')" id="home">{{'header.home'|translate}}</li>
@@ -17,14 +17,14 @@
     <li class="d-flex justify-content-end col-3">
       <div class="d-flex gap-2">
         <button class="btn button1" type="button">
-          <img (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
+          <img loading="lazy" (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
             style="width: 35px;border:1px solid rgb(163, 163, 163);border-radius: 50%;">
-          <img (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
+          <img loading="lazy" (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
             style="width: 35px;border:1px solid rgb(163, 163, 163);border-radius: 50%;">
         </button>
         <div class="dark_mode m-auto mb-0">
-          <label class="ui-switch">
-            <input type="checkbox" (change)="toggleDarkMode()" [checked]="isDark">
+          <label class="ui-switch" for="checkboxMode">
+            <input type="checkbox" (change)="toggleDarkMode()" [checked]="isDark" id="checkboxMode" name="checkboxMode">
             <div class="slider" >
               <div class="circle"></div>
             </div>
@@ -37,15 +37,15 @@
 <div class="d-block d-sm-none" [ngClass]="getCurrentThemeClass('header_component_phone')">
   <ul class="d-flex justify-content-between mb-0 bod">
     <li class="d-flex justify-content-start col-3">
-      <img src="assets/image/home/My.png" class="img-icon" routerLink="/home">
+      <img loading="lazy" src="assets/image/home/My.png" class="img-icon" routerLink="/home">
       <span class="firstLetter order_"  routerLink="/home">MK</span>
     </li>
     <li class="d-flex justify-content-end col-3">
       <div class="d-flex gap-2">
         <button class="btn button1" type="button">
-          <img (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
+          <img loading="lazy" (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
             style="width: 35px;">
-          <img (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
+          <img loading="lazy" (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
             style="width: 35px;">
         </button>
         <button class="btn btn_offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
@@ -62,8 +62,8 @@
       <h5 class="offcanvas-title w-100" id="offcanvasExampleLabel">
         <div class="d-flex justify-content-between">
           <div class="dark_mode  mb-0">
-            <label class="ui-switch">
-              <input type="checkbox" (change)="toggleDarkMode()" [checked]="isDark">
+            <label class="ui-switch" for="checkboxModephone">
+              <input type="checkbox" (change)="toggleDarkMode()" [checked]="isDark" id="checkboxModephone" name="checkboxModephone">
               <div class="slider">
                 <div class="circle"></div>
               </div>

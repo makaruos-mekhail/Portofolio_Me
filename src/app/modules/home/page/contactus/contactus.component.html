@@ -7,26 +7,26 @@
     <div class="pt-4">
       <app-title-section [NameTitle]="NameTitle" />
 
-      <div class="row m-0 p-0 d-flex justify-content-center mt-4  ">
+      <div class="row m-0 p-0 d-flex justify-content-center mt-4 mb-3">
 
         <div class="col-12 col-sm-5 div1 m-auto" #ContactusAnimation>
           <div class="contact-form-wrapper d-flex justify-content-center">
             <form (submit)="sendEmail($event)" class="contact-form" #contactForm="ngForm">
               <div>
-                <input type="text" class="form-control rounded border-white mb-3 form-input" id="name"
+                <input type="text" class="form-control rounded border-white mb-3 form-input" id="name" autocomplete="on"
                   placeholder="{{ 'contact-us.name'|translate }}" required name="user_name">
               </div>
               <div>
-                <input type="email" class="form-control rounded border-white mb-3 form-input"
+                <input type="email" class="form-control rounded border-white mb-3 form-input" autocomplete="on"
                   placeholder="{{ 'contact-us.email'|translate }}" required name="user_email">
               </div>
               <div>
-                <input type="tel" class="form-control rounded border-white mb-3 form-input"
+                <input type="tel" class="form-control rounded border-white mb-3 form-input" autocomplete="on"
                   placeholder="{{ 'contact-us.phone'|translate }}" required name="user_phone"
                   pattern="\d{11}" maxlength="11" (input)="validateInput($event)">
               </div>
               <div>
-                <textarea id="message" class="form-control rounded border-white mb-3 form-text-area" rows="5" cols="30"
+                <textarea id="message" class="form-control rounded border-white mb-3 form-text-area" rows="4" cols="30"
                   placeholder="{{ 'contact-us.message'|translate }}" required
                   name="message"></textarea>
               </div>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="col-12 col-sm-5 div2 m-auto" #ContactusAnimation>
-          <img src="assets/image/Contactus/contact2.png" class="w-100 h-100" alt="">
+          <img loading="lazy" src="assets/image/Contactus/contact2.png" class="w-100 h-100" alt="">
         </div>
 
       </div>

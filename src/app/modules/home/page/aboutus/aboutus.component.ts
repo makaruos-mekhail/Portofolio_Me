@@ -14,7 +14,29 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AboutusComponent {
   NameTitle :string ='header.about';
-
+  
+  aboutUsItems = [
+    {
+      icon: 'fa-users',
+      title: 'homesection2.item1',
+      desc: 'homesection2.item1_desc'
+    },
+    {
+      icon: 'fa-laptop-code',
+      title: 'homesection2.item2',
+      desc: 'homesection2.item2_desc'
+    },
+    {
+      icon: 'fa-hand-holding-heart',
+      title: 'homesection2.item3',
+      desc: 'homesection2.item3_desc'
+    },
+    {
+      icon: 'fa-award',
+      title: 'homesection2.item4',
+      desc: 'homesection2.item4_desc'
+    }
+  ];
 
   constructor(private themeService: ThemeDarkService, private translate: TranslateService,
     private animationService: AnimationService,private toastrService: ToastrService) {

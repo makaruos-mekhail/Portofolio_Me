@@ -12,13 +12,25 @@
     align-items: flex-start;
     gap: 32px;
     border-inline-end: 0.5px solid #002542;
+    align-items: center;
+    text-align: center;
 
     @include laptop-Inch-14 {
       padding-inline: 2.2rem;
     }
 
-    @include laptop-Inch-13 {
-      width: 40% !important;
+    @include laptop-Inch-11 {
+      padding-inline: 3rem;
+    }
+
+    @include tablet-view {
+      padding-inline: 1.6rem;
+      padding-inline: 2rem;
+    }
+
+    @include tablet-view-down {
+      padding-inline: 1.5rem;
+      gap: 25px;
     }
 
     @include mobile-only {
@@ -58,6 +70,18 @@
       color: #000000;
       cursor: pointer;
 
+      @include tablet-view {
+        font-size: 18px;
+        height: 35px;
+        width: 35px;
+      }
+
+      @include tablet-view-down {
+        font-size: 16px;
+        height: 30px;
+        width: 30px;
+      }
+
       i {
         color: #000000 !important;
         font-size: 18px;
@@ -71,13 +95,26 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    padding-inline: 3rem;
+    padding-inline: 2rem;
+
+    @include laptop-Inch-11 {
+      gap: 14px;
+    }
+
+    @include tablet-view {
+      gap: 10px;
+    }
+
+    @include tablet-view-down {
+      padding-inline: 1.5rem;
+      gap: 7px;
+    }
 
     @include mobile-only {
       display: flex;
       flex-direction: inherit;
       align-items: flex-start;
-      gap: 20px;
+      gap: 15px;
       padding-inline: 0rem !important;
       border-top: 0.1px solid #002542;
       border-bottom: 0.1px solid #002542;
@@ -86,14 +123,6 @@
       padding-top: 15px;
     }
 
-    div {
-      color: #000000;
-      font-family: var(--Nunito);
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 24px;
-    }
 
     a {
       text-decoration: none;
@@ -104,6 +133,10 @@
       font-weight: 600;
       line-height: 24px;
       cursor: pointer;
+
+      @include tablet-view-down {
+        font-size: 14px;
+      }
     }
   }
 
@@ -134,9 +167,17 @@
         gap: 10px;
       }
 
+      @include tablet-view-down {
+        font-size: 14px;
+      }
+
       i {
         color: #000000;
         font-size: 24px;
+
+        @include tablet-view-down {
+          font-size: 18px;
+        }
       }
     }
 
@@ -190,7 +231,7 @@
     .footer_copyright {
       font-family: var(--Nunito);
       font-weight: 400;
-      font-size: 14px;
+      font-size: 0.9em;
       line-height: 26px;
       text-align: center;
       color: var(--white);

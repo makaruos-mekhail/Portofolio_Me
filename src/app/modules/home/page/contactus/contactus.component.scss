@@ -2,41 +2,42 @@
 
 .contactus,
 .contactus_light {
+
   //background animateStars
   @mixin translate50 {
     transform: translate(-50%, -50%);
   }
-  
+
   @mixin roundedCorners {
     border-radius: 50%;
   }
-  
+
   @mixin rotateBase {
     transform: rotate3d(-1, 1, 0, 0deg);
   }
-  
+
   @mixin rotateRight {
     transform: rotate3d(-1, 1, 0, 30deg);
   }
-  
+
   @mixin rotateLeft {
     transform: rotate3d(-1, 1, 0, -30deg);
   }
-  
+
   @function generateStars($n) {
     $value: '#{0} #{random(2000)}px #{random(2000)}px #FFF';
-  
+
     @for $i from 2 through $n {
       $value: '#{$value}, #{random(2000)}px #{random(2000)}px #FFF';
     }
-  
+
     @return unquote($value);
   }
-  
+
   $stars-small: generateStars(700);
   $stars-medium: generateStars(200);
   $stars-big: generateStars(100);
-  
+
   #stars-container {
     height: 100%;
     width: 100%;
@@ -44,7 +45,7 @@
     overflow: hidden;
     position: relative;
   }
-  
+
   #stars,
   #stars2,
   #stars3 {
@@ -56,12 +57,12 @@
     @include roundedCorners;
     animation: animateStars 30s ease-in-out infinite;
   }
-  
+
   #stars {
     width: 1px;
     height: 1px;
     box-shadow: $stars-small;
-  
+
     &::after {
       content: "";
       position: absolute;
@@ -72,12 +73,12 @@
       @include roundedCorners;
     }
   }
-  
+
   #stars2 {
     width: 2px;
     height: 2px;
     box-shadow: $stars-medium;
-  
+
     &::after {
       content: "";
       position: absolute;
@@ -88,12 +89,12 @@
       @include roundedCorners;
     }
   }
-  
+
   #stars3 {
     width: 3px;
     height: 3px;
     box-shadow: $stars-big;
-  
+
     &::after {
       content: "";
       position: absolute;
@@ -104,29 +105,34 @@
       @include roundedCorners;
     }
   }
-  
+
   @keyframes animateStars {
     0% {
       @include rotateBase;
     }
+
     25% {
       @include rotateRight;
     }
+
     50% {
       @include rotateBase;
     }
+
     75% {
       @include rotateLeft;
     }
+
     100% {
       @include rotateBase;
     }
   }
+
   //background animateStars
 
 
 
-  
+
   .div1 {
     @include mobile-only {
       order: 2;
@@ -134,13 +140,17 @@
   }
 
   .div2 {
+    @include tablet-view-down {
+      width: 50% !important;
+    }
+
     @include mobile-only {
       order: 1;
     }
   }
 
   .contact-form-wrapper {
-    padding: 100px 0;
+    // padding: 100px 0;
 
     @include mobile-only {
       padding: 15px 0;
@@ -152,6 +162,23 @@
     background-color: #f7f5f5;
     border-radius: 12px;
     width: 90%;
+
+    @include laptop-Inch-11 {
+      padding: 20px;
+    }
+
+    @include tablet-view {
+      padding: 20px;
+    }
+
+    @include tablet-view-down {
+      padding: 10px;
+      width: 95%;
+    }
+
+    @include mobile-only {
+      padding: 20px;
+    }
   }
 
   .contact-form textarea {
@@ -165,6 +192,24 @@
     padding-left: 16px;
     border-bottom: 2px solid #DAC5A7 !important;
     font-family: var(--Nunito);
+
+    @include tablet-view {
+      height: 40px;
+      font-size: 14px;
+      margin-bottom: 8px !important;
+    }
+
+    @include tablet-view-down {
+      height: 35px;
+      font-size: 12px;
+      margin-bottom: 8px !important;
+    }
+
+    @include mobile-only {
+      height: 35px;
+      font-size: 14px;
+      margin-bottom: 8px !important;
+    }
   }
 
   .contact-form .form-text-area {
@@ -204,9 +249,25 @@
     background-color: #DAC5A7;
     color: white;
     text-transform: uppercase;
-    padding: 10px 60px;
+    // padding: 10px 60px;
     font-weight: 500;
     letter-spacing: 2px;
+
+    padding: 7px 14px;
+    width: fit-content;
+    font-size: 1em;
+
+    @include tablet-view {
+      font-size: 0.8em;
+    }
+
+    @include tablet-view-down {
+      font-size: 0.7em;
+    }
+
+    @include mobile-only {
+      font-size: 0.8em;
+    }
   }
 
   .contact-form .submit-button-wrapper button:hover {

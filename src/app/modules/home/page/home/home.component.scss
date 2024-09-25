@@ -8,11 +8,31 @@
   .div-Start {
     .heading {
       padding: 10px;
-      color:white;
+      color: white;
       font-style: italic;
       font-weight: bold;
       font-size: 25px;
       font-family: var(--Nunito);
+
+      @include laptop-Inch-13 {
+        font-size: 23px;
+      }
+
+      @include laptop-Inch-12 {
+        font-size: 21px;
+      }
+
+      @include laptop-Inch-11 {
+        font-size: 19px;
+      }
+
+      @include tablet-view {
+        font-size: 19px;
+      }
+
+      @include tablet-view-down {
+        font-size: 15px;
+      }
 
       @include mobile-only {
         font-size: 20px;
@@ -27,12 +47,31 @@
       font-weight: bold;
       font-size: 25px;
 
+      @include laptop-Inch-13 {
+        font-size: 23px;
+      }
+
+      @include laptop-Inch-12 {
+        font-size: 21px;
+      }
+
+      @include laptop-Inch-11 {
+        font-size: 19px;
+      }
+
+      @include tablet-view {
+        font-size: 19px;
+      }
+
+      @include tablet-view-down {
+        font-size: 15px;
+      }
+
       @include mobile-only {
         font-size: 20px;
         padding-bottom: 0px;
       }
     }
-
 
     .title {
       padding: 10px;
@@ -41,6 +80,26 @@
       font-size: 25px;
       animation: XchangeColor 7s infinite;
       font-family: var(--Nunito);
+
+      @include laptop-Inch-13 {
+        font-size: 23px;
+      }
+
+      @include laptop-Inch-12 {
+        font-size: 21px;
+      }
+
+      @include laptop-Inch-11 {
+        font-size: 19px;
+      }
+
+      @include tablet-view {
+        font-size: 19px;
+      }
+
+      @include tablet-view-down {
+        font-size: 15px;
+      }
 
       @include mobile-only {
         font-size: 20px;
@@ -70,7 +129,6 @@
       }
     }
 
-
     .desc {
       p {
         padding: 10px;
@@ -79,6 +137,30 @@
         height: 170px;
         font-size: 20px;
         font-family: var(--Nunito);
+
+        @include laptop-Inch-13 {
+          font-size: 18px;
+        }
+
+        @include laptop-Inch-12 {
+          font-size: 16px;
+        }
+
+        @include laptop-Inch-11 {
+          font-size: 15px;
+          height: 135px;
+        }
+
+        @include tablet-view {
+          font-size: 15px;
+          height: 135px;
+        }
+
+        @include tablet-view-down {
+          font-size: 13px;
+          height: 145px;
+        }
+
         @include mobile-only {
           font-size: 15px;
           padding-bottom: 0px;
@@ -103,6 +185,14 @@
         font-weight: bold;
         font-size: 14px;
         transition: all .15s ease;
+
+        @include tablet-view {
+          padding: 5px;
+        }
+
+        @include tablet-view-down {
+          padding: 0px;
+        }
       }
 
       .button::before,
@@ -217,14 +307,58 @@
       .iconsHome {
         color: white;
         font-size: 40px;
+
+        @include tablet-view {
+          font-size: 30px;
+        }
+
+        @include tablet-view-down {
+          font-size: 25px;
+        }
       }
+    }
+
+    @include laptop-Inch-13 {
+      padding: 2rem !important;
+    }
+
+    @include laptop-Inch-12 {
+      padding: 2rem !important;
+    }
+
+    @include laptop-Inch-11 {
+      padding: 2rem !important;
+    }
+
+    @include tablet-view {
+      padding: 2rem !important;
+    }
+
+    @include tablet-view-down {
+      padding: 1rem !important;
     }
   }
 
   .div-center {
     .img {
-      @include tablet-and-up {
+      @include laptop-Inch-13 {
         padding: 1rem !important;
+      }
+
+      @include laptop-Inch-12 {
+        padding: 0.75rem !important;
+      }
+
+      @include laptop-Inch-11 {
+        padding: 1rem !important;
+      }
+
+      @include tablet-view {
+        padding: 0.5rem !important;
+      }
+
+      @include tablet-view-down {
+        padding: 0.5rem !important;
       }
 
       @include mobile-only {

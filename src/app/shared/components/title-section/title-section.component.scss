@@ -21,10 +21,37 @@
     font-weight: 600;
     line-height: normal;
 
+    @include laptop-Inch-15 {
+      font-size: 30px;
+    }
+
+    @include laptop-Inch-14 {
+      font-size: 28px;
+    }
+
+    @include laptop-Inch-13 {
+      font-size: 26px;
+    }
+
+    @include laptop-Inch-12 {
+      font-size: 25px;
+    }
+
+    @include laptop-Inch-11 {
+      font-size: 24px;
+    }
+
+    @include tablet-view {
+      font-size: 22px;
+    }
+
+    @include tablet-view-down {
+      font-size: 18px;
+    }
 
     @include mobile-only {
       // border-inline-start: 2px solid gray;
-      font-size: 22px;
+      font-size: 20px;
     }
   }
 

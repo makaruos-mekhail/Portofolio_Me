@@ -1,19 +1,17 @@
-<div [ngClass]="getCurrentThemeClass('Projects')">
-
+<section [ngClass]="getCurrentThemeClass('Projects')">
   <div class="pt-4">
     <app-title-section [NameTitle]="NameTitle" />
-
     <div class="Project_90">
       <div class="keen-slider Project_" #sliderRef>
         <div class="keen-slider__slide " *ngFor="let item of itemProjects">
           <div class="card_style mt-5 me-2 ms-2" #ProjectAnimation>
             <div class="card">
-              <img [src]="item?.image" class="w-100 h-100" alt="">
+              <img loading="lazy" [src]="item?.image" class="w-100 h-100" alt="">
               <p class="heading">{{ item.title |translate }} <i class="fa-solid fa-link"></i></p>
               <div class="overlay">
                 <div class="desc_cardBtn">
                   <div class="desc">{{ item.desc |translate }}</div>
-                  <a [href]="item?.link"><button
+                  <a [href]="item?.link" target="_blank"><button
                       class="card-btn">{{ 'home.view'|translate }}</button></a>
                 </div>
               </div>
@@ -25,14 +23,14 @@
     <div class="row m-0 d-flex justify-content-center">
       <div class="col-6 d-flex justify-content-center mt-5">
         <p class="d-flex">
-          <span class="icon_size_slidOne">
-            <i class="fa-solid fa-circle ms-2 me-2" (click)="goToNextSlide()"></i>
+          <span class="icon_size_slidOne" (click)="goToNextSlide()">
+            <i class="fa-solid fa-circle ms-2 me-2" ></i>
           </span>
-          <span class="icon_size_slidTwo">
-            <i class="fa-solid fa-circle ms-2 me-2" (click)="goToPrevSlide()"></i>
+          <span class="icon_size_slidTwo" (click)="goToPrevSlide()">
+            <i class="fa-solid fa-circle ms-2 me-2"></i>
           </span>
         </p>
       </div>
     </div>
   </div>
-</div>
+</section>

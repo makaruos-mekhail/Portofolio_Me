@@ -10,24 +10,22 @@ import KeenSlider, { KeenSliderInstance } from "keen-slider";
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
-  NameTitle :string ='header.projects';
+  NameTitle: string = 'header.projects';
   @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
-
   slider!: KeenSliderInstance;
 
-
-  itemProjects=[
-    {id:1,image:'assets/image/Projects/Deoss.png',title:'projects-details.txtPro1',desc:'projects-details.pro1',link:'https://deoss-congress.vercel.app'},
-    {id:2,image:'assets/image/Projects/HGR.png',title:'projects-details.txtPro2',desc:'projects-details.pro2',link:'https://hany-george.com/'},
-    {id:3,image:'assets/image/Projects/K-Group.png',title:'projects-details.txtPro3',desc:'projects-details.pro3',link:'https://k-group.vercel.app'},
-    {id:4,image:'assets/image/Projects/Origin.png',title:'projects-details.txtPro4',desc:'projects-details.pro4',link:'https://origin-zeta.vercel.app'},
-    {id:5,image:'assets/image/Projects/Sham-pistachio0.PNG',title:'projects-details.txtPro5',desc:'projects-details.pro5',link:'https://sham-pistachio.vercel.app'},
-    {id:6,image:'assets/image/Projects/Printex.png',title:'projects-details.txtPro6',desc:'projects-details.pro6',link:'https://prentex-new-version.vercel.app'},
-    {id:7,image:'assets/image/Projects/FlexSign.png',title:'projects-details.txtPro7',desc:'projects-details.pro7',link:'https://flex-sign-website.vercel.app'},
-    {id:8,image:'assets/image/Projects/Fanarah.png',title:'projects-details.txtPro8',desc:'projects-details.pro8',link:'https://fanarah-api-new.vercel.app'},
-    {id:9,image:'assets/image/Projects/Modevia.PNG',title:'projects-details.txtPro9',desc:'projects-details.pro9',link:'https://modevia-bay.vercel.app'},
-    {id:10,image:'assets/image/Projects/Prints.PNG',title:'projects-details.txtPro10',desc:'projects-details.pro10',link:'https://prints-api.vercel.app'},
-    // {id:11,image:'',title:'Polymers Shop',desc:'',link:''},
+  itemProjects = [
+    { id: 1, image: 'assets/image/Projects/Deoss.png', title: 'projects-details.txtPro1', desc: 'projects-details.pro1', link: 'https://deoss-congress.vercel.app' },
+    { id: 2, image: 'assets/image/Projects/HGR.png', title: 'projects-details.txtPro2', desc: 'projects-details.pro2', link: 'https://hany-george.com/' },
+    { id: 5, image: 'assets/image/Projects/Sham-pistachio0.PNG', title: 'projects-details.txtPro5', desc: 'projects-details.pro5', link: 'https://sham-pistachio.vercel.app' },
+    { id: 3, image: 'assets/image/Projects/K-Group.png', title: 'projects-details.txtPro3', desc: 'projects-details.pro3', link: 'https://k-group.vercel.app' },
+    { id: 11,image:'assets/image/Projects/Polymers.png',title:'projects-details.txtPro11',desc:'projects-details.pro11',link:'https://polymers-new-jet.vercel.app'},
+    { id: 9, image: 'assets/image/Projects/Modevia.PNG', title: 'projects-details.txtPro9', desc: 'projects-details.pro9', link: 'https://modevia-bay.vercel.app' },
+    { id: 4, image: 'assets/image/Projects/Origin.png', title: 'projects-details.txtPro4', desc: 'projects-details.pro4', link: 'https://origin-zeta.vercel.app' },
+    { id: 6, image: 'assets/image/Projects/Printex.png', title: 'projects-details.txtPro6', desc: 'projects-details.pro6', link: 'https://prentex-new-version.vercel.app' },
+    { id: 7, image: 'assets/image/Projects/FlexSign.png', title: 'projects-details.txtPro7', desc: 'projects-details.pro7', link: 'https://flex-sign-website.vercel.app' },
+    { id: 8, image: 'assets/image/Projects/Fanarah.png', title: 'projects-details.txtPro8', desc: 'projects-details.pro8', link: 'https://fanarah-api-new.vercel.app' },
+    { id: 10,image: 'assets/image/Projects/Prints.PNG', title: 'projects-details.txtPro10', desc: 'projects-details.pro10', link: '#' },
     // {id:12,image:'',title:'Elegant E-commerce',desc:'',link:''},
   ]
 
@@ -44,9 +42,9 @@ export class ProjectsComponent {
   }
 
   ngOnInit(): void {
-        setTimeout(() => {
-          this.ngAfterViewInit(), 0
-        });
+    setTimeout(() => {
+      this.ngAfterViewInit(), 0
+    });
   }
 
   ngAfterViewInit() {
@@ -54,56 +52,62 @@ export class ProjectsComponent {
       this.sliderRef.nativeElement,
       {
         loop: true,
-      slides: {
-        perView: 3,
-        spacing: 18,
-      },
-      breakpoints: {
-        '(min-width: 1251px)': {
-          slides: {
-            perView: 3,
-            spacing: 18,
-          },
+        slides: {
+          perView: 4,
+          spacing: 0,
         },
-        '(max-width: 1250px)': {
-          slides: {
-            perView: 3,
-            spacing: 15,
+        breakpoints: {
+          '(min-width: 1200px)': {
+            slides: {
+              perView: 4,
+              spacing: 0,
+            },
           },
-        },
-        '(max-width: 500px)': {
-          slides: {
-            perView: 1,
-            spacing: 10,
+          '(max-width: 1199px)': {
+            slides: {
+              perView: 3,
+              spacing: 0,
+            },
           },
+          '(max-width: 768px)': {
+            slides: {
+              perView: 2,
+              spacing: 0,
+            },
+          },
+          '(max-width: 575px)': {
+            slides: {
+              perView: 1,
+              spacing: 0,
+            },
+          }
         },
-      },
-      renderMode: "performance",
-      drag: true,
+        renderMode: "performance",
+        drag: true,
       },
       [
         (slider) => {
-          let timeout:any;
-          let mouseOver = false
+          let timeout: any;
+          let mouseOver = true
           function clearNextTimeout() {
             clearTimeout(timeout)
           }
           function nextTimeout() {
             // {
-              // clearTimeout(timeout);
-              if (mouseOver) return
+            // clearTimeout(timeout);
+            if (mouseOver) return
             // }
             timeout = setTimeout(() => {
               slider.next()
-            }, 2000)
+            }, 3000)
           }
           slider.on("created", () => {
             slider.container.addEventListener("mouseover", () => {
               // {
-                mouseOver = true
-                clearNextTimeout()
-                // mouseOver = false;
-                // nextTimeout();
+              mouseOver = true
+              clearNextTimeout()
+              // mouseOver = false;
+              // nextTimeout();
               // }
             })
             slider.container.addEventListener("mouseout", () => {
@@ -128,17 +132,15 @@ export class ProjectsComponent {
     }
   }
 
-
-
   ngOnDestroy() {
     if (this.slider) this.slider.destroy()
 
     //Animation
-      if (this.animatedElements) {
-        this.animatedElements.forEach((element) => {
-          this.animationService.removeElement(element);
-        });
-      }
+    if (this.animatedElements) {
+      this.animatedElements.forEach((element) => {
+        this.animationService.removeElement(element);
+      });
+    }
   }
 
   goToNextSlide() {
@@ -149,31 +151,12 @@ export class ProjectsComponent {
     this.slider?.prev();
   }
 
+  //Animation
+  @ViewChildren('ProjectAnimation')
+  animatedElements?: QueryList<ElementRef>;
 
-
-    //Animation
-    @ViewChildren('ProjectAnimation')
-    animatedElements?: QueryList<ElementRef>;
-  
-    // ngAfterViewInit(): void {
-    //   if (this.animatedElements) {
-    //     this.animatedElements.forEach((element) => {
-    //       this.animationService.addElement(element);
-    //     });
-    //     this.animationService.onScroll();
-    //   }
-    // }
-  
-    // ngOnDestroy(): void {
-    //   if (this.animatedElements) {
-    //     this.animatedElements.forEach((element) => {
-    //       this.animationService.removeElement(element);
-    //     });
-    //   }
-    // }
-  
-    @HostListener('window:scroll', [])
-    onWindowScroll(): void {
-      this.animationService.onScroll();
-    }
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    this.animationService.onScroll();
+  }
 }

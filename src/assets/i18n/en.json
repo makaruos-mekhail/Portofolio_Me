@@ -26,6 +26,7 @@
     "txtPro8":"Fanarah School",
     "txtPro9":"Modevia Clinic",
     "txtPro10":"Prints E-commerce",
+    "txtPro11":"Polymers Shop",
     "pro1":"This project is for the Deoss Congress World Eye Symposium, serving as an announcement and detail overview. It features many renowned ophthalmologists and specialists in eye diseases and diagnostics",
     "pro2":"This project is owned by Hany George, serving as the official website for the company. It is dedicated to showcasing the company's products and providing detailed information about its offerings.",
     "pro3":"This project is owned by k-group, serving as the official website for the company. It is dedicated to showcasing the company's products and providing detailed information about its offerings.",
@@ -35,7 +36,8 @@
     "pro7":"This project is owned by FlexSign, serving as the official website for the company. It is dedicated to showcasing the company's products and providing detailed information about its offerings.",
     "pro8":"This project is owned by Fanarah Schools, and serves as the official website of the school. It is dedicated to providing services to students, submission through it, and information about them.",
     "pro9":"This project is owned by Modevia Clinics, serving as the official website for the company. It is dedicated to knowing their services, clinics and hospitals.",
-    "pro10":"This project is owned by Prints, serving as the official website for the company. It is dedicated to displaying the company's products and making orders for all types of printing."
+    "pro10":"This project is owned by Prints, serving as the official website for the company. It is dedicated to displaying the company's products and making orders for all types of printing.",
+    "pro11":"This project is owned by Polymers, serving as the official website for the company. It is dedicated to showcasing the company's products and providing detailed information about its offerings."
   },
   "services":{
     "serviceTitle1":"Development",
