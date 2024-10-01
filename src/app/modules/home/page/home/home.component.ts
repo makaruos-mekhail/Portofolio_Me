@@ -71,8 +71,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
     });
   }
 
-
-
   //Print one letter at a time
   sentence: string = '';
   delay: number = 70;
@@ -103,8 +101,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
     }, this.delay);
   }
 
-
-
   // dark mode
   toggleDarkMode() {
     this.themeService.toggleDarkMode();
@@ -113,8 +109,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
   getCurrentThemeClass(value: string) {
     return this.themeService.getCurrentThemeClass(value);
   }
-
-
 
   // downloadPDF
   downloadPDF(filePath: string): void {
@@ -127,10 +121,8 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
     window.document.body.removeChild(a);
   }
 
-
   //Animation
   @ViewChildren('ImagePortofolio, TextAnimation') animatedElements?: QueryList<ElementRef>;
-
 
   ngAfterViewInit(): void {
     if (this.animatedElements) {
@@ -153,8 +145,4 @@ export class HomeComponent implements AfterViewInit, OnDestroy, OnInit {
   onWindowScroll(): void {
     this.animationService.onScroll();
   }
-
-
-
-
 }
