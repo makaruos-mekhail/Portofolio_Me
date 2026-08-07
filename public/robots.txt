@@ -1,0 +1,5 @@
+# https://portofolio-makaruos.vercel.app
+User-agent: *
+Allow: /
+
+Sitemap: https://portofolio-makaruos.vercel.app/sitemap.xml
