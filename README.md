@@ -1,6 +1,6 @@
 # Makaruos Mekhail — Portfolio (Angular 21)
 
-The Claude Design concept rebuilt as a real **Angular 21** application: standalone
+The Design concept rebuilt as a real **Angular 21** application: standalone
 components, signals, zoneless change detection, hand-written SCSS (no utility-CSS
 framework), a persisted light/dark theme and full Arabic/English support with RTL.
 
@@ -20,10 +20,7 @@ npm run build      # production build → dist/portfolio/browser
 
 ## 2. What changed from the design file
 
-The uploaded HTML was a bundled React/Claude-Design prototype. Rather than re-typing the
-content by hand, the bilingual data was **extracted programmatically** from the design's
-own logic and compiled into typed dictionaries — so every Arabic string in this app is
-exactly the one from the design, with no transcription drift.
+Rather than re-typing the content by hand, the bilingual data was **extracted programmatically** from the design's own logic and compiled into typed dictionaries — so every Arabic string in this app is exactly the one from the design, with no transcription drift.
 
 | Design concept | Angular implementation |
 |---|---|
@@ -158,7 +155,7 @@ untranslated text on first paint, and no extra dependency.
 **What is translated and what is not:** every sentence, label, heading, filter name and
 button is translated. Technology names stay in Latin script in both languages —
 `Angular`, `TypeScript`, `Nx Monorepo`, `Stripe`, `Firebase`, `SSR`, `PrimeNG`,
-`ngx-translate`, `Claude Code` — because translating them would make the CV harder to
+`ngx-translate` — because translating them would make the CV harder to
 read for an Arabic-speaking developer, not easier. Proper nouns (Expand360, Belvro Wealth,
 Comply360, SIMPLIFE, ITI) are likewise unchanged, while their surrounding descriptions are
 fully Arabic.
