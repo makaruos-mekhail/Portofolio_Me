@@ -24,7 +24,7 @@ import { SectionTitle } from '../shared/section-title';
           role="tablist"
           [attr.aria-label]="t().skills.groupsLabel">
           @for (group of t().skillGroups; track group.id) {
-            <li class="sk__tab-item">
+            <li class="sk__tab-item" role="presentation">
               <button
                 type="button"
                 role="tab"

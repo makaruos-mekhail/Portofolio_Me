@@ -1,5 +1,7 @@
 # Makaruos Mekhail — Portfolio (Angular 21)
 
+[![CI](https://github.com/makaruos-mekhail/Portofolio_Me/actions/workflows/ci.yml/badge.svg)](https://github.com/makaruos-mekhail/Portofolio_Me/actions/workflows/ci.yml)
+![Coverage](./badges/coverage.svg)
 ![Angular](https://img.shields.io/badge/Angular-21-DD0031?logo=angular&logoColor=white)
 ![License](https://img.shields.io/badge/license-All%20rights%20reserved-red)
 
