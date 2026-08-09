@@ -1,5 +1,5 @@
 import { Injectable, PLATFORM_ID, computed, effect, inject, signal } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Dict } from '../i18n/dict';
 import { en } from '../i18n/en';
 import { ar } from '../i18n/ar';
@@ -7,6 +7,8 @@ import { ar } from '../i18n/ar';
 export type Lang = 'en' | 'ar';
 const STORAGE_KEY = 'mk-lang';
 const DICTS: Record<Lang, Dict> = { en, ar };
+const BASE_URL = 'https://portofolio-makaruos.vercel.app';
+const PATHS: Record<Lang, string> = { en: '/', ar: '/ar' };
 
 /**
  * Minimal, dependency-free i18n built on signals.
@@ -19,6 +21,7 @@ const DICTS: Record<Lang, Dict> = { en, ar };
 @Injectable({ providedIn: 'root' })
 export class I18nService {
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly document = inject(DOCUMENT);
   readonly lang = signal<Lang>(this.read());
   readonly t = computed<Dict>(() => DICTS[this.lang()]);
   readonly isRtl = computed(() => this.lang() === 'ar');
@@ -27,14 +30,28 @@ export class I18nService {
   constructor() {
     effect(() => {
       const lang = this.lang();
-      if (!this.isBrowser) return;
-      const root = document.documentElement;
+      // Runs during prerendering too (not just isBrowser), so each of '/' and
+      // '/ar' gets its own correct <html lang>, title, description and
+      // canonical baked into the static HTML search engines crawl.
+      const doc = this.document;
+      const root = doc.documentElement;
       root.lang = lang;
       root.dir = this.dir();
-      document.title = this.t().meta.title;
-      document
+      doc.title = this.t().meta.title;
+      doc
         .querySelector('meta[name="description"]')
         ?.setAttribute('content', this.t().meta.description);
+      const url = BASE_URL + PATHS[lang];
+      doc.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+      doc.querySelector('meta[property="og:url"]')?.setAttribute('content', url);
+      doc
+        .querySelector('meta[property="og:locale"]')
+        ?.setAttribute('content', lang === 'ar' ? 'ar_AR' : 'en_US');
+      doc
+        .querySelector('meta[property="og:locale:alternate"]')
+        ?.setAttribute('content', lang === 'ar' ? 'en_US' : 'ar_AR');
+
+      if (!this.isBrowser) return;
       try {
         localStorage.setItem(STORAGE_KEY, lang);
       } catch {

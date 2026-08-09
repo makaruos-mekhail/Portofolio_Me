@@ -2,7 +2,12 @@ import { Routes } from '@angular/router';
 import { Home } from './home';
 
 /**
- * Single-page portfolio: one route rendering the whole page. Declaring it
- * explicitly is what lets the prerenderer discover and render '' to static HTML.
+ * Same single-page portfolio prerendered twice: '' in English and 'ar' in
+ * Arabic. Two static, crawlable URLs — rather than one page that swaps
+ * language client-side — are what let search engines index and rank the
+ * Arabic name/content on its own.
  */
-export const routes: Routes = [{ path: '', component: Home }];
+export const routes: Routes = [
+  { path: '', component: Home, data: { lang: 'en' } },
+  { path: 'ar', component: Home, data: { lang: 'ar' } }
+];

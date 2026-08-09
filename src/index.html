@@ -12,12 +12,17 @@
     <meta name="author" content="Makaruos Mekhail Yousab" />
     <meta
       name="keywords"
-      content="Frontend Developer, Angular Developer, Angular 21, TypeScript, Micro-Frontend, Nx Monorepo, RxJS, SSR, SEO, Cairo, Egypt, Makaruos Mekhail"
+      content="Frontend Developer, Angular Developer, Angular 21, TypeScript, Micro-Frontend, Nx Monorepo, RxJS, SSR, SEO, Cairo, Egypt, Makaruos Mekhail, مكاريوس ميخائيل, مكاريوس ميخائيل يوساب, مطور Angular"
     />
     <meta name="theme-color" content="#1a1a1f" />
 
-    <!-- Canonical: the single address search engines should index -->
+    <!-- Canonical: overwritten per-route (see I18nService) so '/' and '/ar' each self-canonicalize -->
     <link rel="canonical" href="https://portofolio-makaruos.vercel.app/" />
+
+    <!-- hreflang: tells search engines the English and Arabic pages are translations of each other -->
+    <link rel="alternate" hreflang="en" href="https://portofolio-makaruos.vercel.app/" />
+    <link rel="alternate" hreflang="ar" href="https://portofolio-makaruos.vercel.app/ar" />
+    <link rel="alternate" hreflang="x-default" href="https://portofolio-makaruos.vercel.app/" />
 
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:type" content="website" />
@@ -83,6 +88,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Makaruos Mekhail Yousab",
+        "alternateName": ["مكاريوس ميخائيل يوساب", "مكاريوس ميخائيل", "Makaruos Mekhail"],
         "givenName": "Makaruos",
         "familyName": "Mekhail Yousab",
         "url": "https://portofolio-makaruos.vercel.app/",
